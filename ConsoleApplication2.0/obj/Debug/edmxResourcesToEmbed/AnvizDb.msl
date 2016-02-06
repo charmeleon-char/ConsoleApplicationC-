@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Anviz_Data_BaseModelStoreContainer" CdmEntityContainer="Anviz_Data_BaseEntities">
+    <EntitySetMapping Name="AddTimeSets">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.AddTimeSet">
+        <MappingFragment StoreEntitySet="AddTimeSet">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaseParas">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.BasePara">
+        <MappingFragment StoreEntitySet="BasePara">
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="TwoDay" ColumnName="TwoDay" />
+          <ScalarProperty Name="NoClockIn" ColumnName="NoClockIn" />
+          <ScalarProperty Name="NoClockOut" ColumnName="NoClockOut" />
+          <ScalarProperty Name="LateTime" ColumnName="LateTime" />
+          <ScalarProperty Name="LeaveTime" ColumnName="LeaveTime" />
+          <ScalarProperty Name="ISOverTime" ColumnName="ISOverTime" />
+          <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+          <ScalarProperty Name="WorkDayLong" ColumnName="WorkDayLong" />
+          <ScalarProperty Name="WOverTime" ColumnName="WOverTime" />
+          <ScalarProperty Name="HOverTime" ColumnName="HOverTime" />
+          <ScalarProperty Name="FOverTime" ColumnName="FOverTime" />
+          <ScalarProperty Name="IsAutoDownRec" ColumnName="IsAutoDownRec" />
+          <ScalarProperty Name="DownRecTime" ColumnName="DownRecTime" />
+          <ScalarProperty Name="OvertimeIn" ColumnName="OvertimeIn" />
+          <ScalarProperty Name="IsovertimeIn" ColumnName="IsovertimeIn" />
+          <ScalarProperty Name="DeductIn" ColumnName="DeductIn" />
+          <ScalarProperty Name="DeductOut" ColumnName="DeductOut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Checkinouts">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Checkinout">
+        <MappingFragment StoreEntitySet="Checkinout">
+          <ScalarProperty Name="Logid" ColumnName="Logid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+          <ScalarProperty Name="CheckType" ColumnName="CheckType" />
+          <ScalarProperty Name="Sensorid" ColumnName="Sensorid" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+          <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+          <ScalarProperty Name="AttFlag" ColumnName="AttFlag" />
+          <ScalarProperty Name="OpenDoorFlag" ColumnName="OpenDoorFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckLogs">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.CheckLog">
+        <MappingFragment StoreEntitySet="CheckLog">
+          <ScalarProperty Name="Logid" ColumnName="Logid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Checktime" ColumnName="Checktime" />
+          <ScalarProperty Name="Checktype" ColumnName="Checktype" />
+          <ScalarProperty Name="Sensorid" ColumnName="Sensorid" />
+          <ScalarProperty Name="OPFlag" ColumnName="OPFlag" />
+          <ScalarProperty Name="Whys" ColumnName="Whys" />
+          <ScalarProperty Name="OPname" ColumnName="OPname" />
+          <ScalarProperty Name="DTime" ColumnName="DTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientSets">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.ClientSet">
+        <MappingFragment StoreEntitySet="ClientSet">
+          <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="DTime" ColumnName="DTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DefineFields">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.DefineField">
+        <MappingFragment StoreEntitySet="DefineField">
+          <ScalarProperty Name="Fieldid" ColumnName="Fieldid" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FieldValue" ColumnName="FieldValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Depts">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Dept">
+        <MappingFragment StoreEntitySet="Dept">
+          <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="SupDeptid" ColumnName="SupDeptid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerClients">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.FingerClient">
+        <MappingFragment StoreEntitySet="FingerClient">
+          <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+          <ScalarProperty Name="Linkmode" ColumnName="Linkmode" />
+          <ScalarProperty Name="IPaddress" ColumnName="IPaddress" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+          <ScalarProperty Name="Baudrate" ColumnName="Baudrate" />
+          <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+          <ScalarProperty Name="Floorid" ColumnName="Floorid" />
+          <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="CommPWD" ColumnName="CommPWD" />
+          <ScalarProperty Name="CommPort" ColumnName="CommPort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holidays">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Holiday">
+        <MappingFragment StoreEntitySet="Holiday">
+          <ScalarProperty Name="Holidayid" ColumnName="Holidayid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BDate" ColumnName="BDate" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveClasses">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.LeaveClass">
+        <MappingFragment StoreEntitySet="LeaveClass">
+          <ScalarProperty Name="Classid" ColumnName="Classid" />
+          <ScalarProperty Name="Classname" ColumnName="Classname" />
+          <ScalarProperty Name="ViewColor" ColumnName="ViewColor" />
+          <ScalarProperty Name="Showas" ColumnName="Showas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemStats">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.MemStat">
+        <MappingFragment StoreEntitySet="MemStat">
+          <ScalarProperty Name="Lsh" ColumnName="Lsh" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Udept" ColumnName="Udept" />
+          <ScalarProperty Name="Uname" ColumnName="Uname" />
+          <ScalarProperty Name="Normal" ColumnName="Normal" />
+          <ScalarProperty Name="Actual" ColumnName="Actual" />
+          <ScalarProperty Name="Latetime" ColumnName="Latetime" />
+          <ScalarProperty Name="Earlytime" ColumnName="Earlytime" />
+          <ScalarProperty Name="Absenttime" ColumnName="Absenttime" />
+          <ScalarProperty Name="Overtime" ColumnName="Overtime" />
+          <ScalarProperty Name="Noin" ColumnName="Noin" />
+          <ScalarProperty Name="Noout" ColumnName="Noout" />
+          <ScalarProperty Name="Awaytime" ColumnName="Awaytime" />
+          <ScalarProperty Name="BLeave" ColumnName="BLeave" />
+          <ScalarProperty Name="Leave" ColumnName="Leave" />
+          <ScalarProperty Name="Freeovertime" ColumnName="Freeovertime" />
+          <ScalarProperty Name="Worktime" ColumnName="Worktime" />
+          <ScalarProperty Name="Attrate" ColumnName="Attrate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPinfoes">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OPinfo">
+        <MappingFragment StoreEntitySet="OPinfo">
+          <ScalarProperty Name="Opid" ColumnName="Opid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="Deptpower" ColumnName="Deptpower" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPLogs">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OPLog">
+        <MappingFragment StoreEntitySet="OPLog">
+          <ScalarProperty Name="Logid" ColumnName="Logid" />
+          <ScalarProperty Name="OPid" ColumnName="OPid" />
+          <ScalarProperty Name="Optime" ColumnName="Optime" />
+          <ScalarProperty Name="OPlog1" ColumnName="OPlog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutProgs">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OutProg">
+        <MappingFragment StoreEntitySet="OutProg">
+          <ScalarProperty Name="Progid" ColumnName="Progid" />
+          <ScalarProperty Name="ProgName" ColumnName="ProgName" />
+          <ScalarProperty Name="ProgPath" ColumnName="ProgPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="Schid" ColumnName="Schid" />
+          <ScalarProperty Name="Schname" ColumnName="Schname" />
+          <ScalarProperty Name="Cycles" ColumnName="Cycles" />
+          <ScalarProperty Name="Units" ColumnName="Units" />
+          <ScalarProperty Name="AutoClass" ColumnName="AutoClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchTimes">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.SchTime">
+        <MappingFragment StoreEntitySet="SchTime">
+          <ScalarProperty Name="Schid" ColumnName="Schid" />
+          <ScalarProperty Name="BeginDay" ColumnName="BeginDay" />
+          <ScalarProperty Name="Timeid" ColumnName="Timeid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatItems">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.StatItem">
+        <MappingFragment StoreEntitySet="StatItems">
+          <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="Units" ColumnName="Units" />
+          <ScalarProperty Name="MinUnit" ColumnName="MinUnit" />
+          <ScalarProperty Name="SRControl" ColumnName="SRControl" />
+          <ScalarProperty Name="IsAddup" ColumnName="IsAddup" />
+          <ScalarProperty Name="IsTimes" ColumnName="IsTimes" />
+          <ScalarProperty Name="Showas" ColumnName="Showas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Statusid" ColumnName="Statusid" />
+          <ScalarProperty Name="StatusChar" ColumnName="StatusChar" />
+          <ScalarProperty Name="StatusText" ColumnName="StatusText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Checkinout">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.T_Checkinout">
+        <MappingFragment StoreEntitySet="T_Checkinout">
+          <ScalarProperty Name="Logid" ColumnName="Logid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+          <ScalarProperty Name="CheckType" ColumnName="CheckType" />
+          <ScalarProperty Name="Sensorid" ColumnName="Sensorid" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+          <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+          <ScalarProperty Name="AttFlag" ColumnName="AttFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_UpdateClient">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.T_UpdateClient">
+        <MappingFragment StoreEntitySet="T_UpdateClient">
+          <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeTables">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.TimeTable">
+        <MappingFragment StoreEntitySet="TimeTable">
+          <ScalarProperty Name="Timeid" ColumnName="Timeid" />
+          <ScalarProperty Name="Timename" ColumnName="Timename" />
+          <ScalarProperty Name="Intime" ColumnName="Intime" />
+          <ScalarProperty Name="Outtime" ColumnName="Outtime" />
+          <ScalarProperty Name="BIntime" ColumnName="BIntime" />
+          <ScalarProperty Name="EIntime" ColumnName="EIntime" />
+          <ScalarProperty Name="BOuttime" ColumnName="BOuttime" />
+          <ScalarProperty Name="EOuttime" ColumnName="EOuttime" />
+          <ScalarProperty Name="Latetime" ColumnName="Latetime" />
+          <ScalarProperty Name="Leavetime" ColumnName="Leavetime" />
+          <ScalarProperty Name="WorkDays" ColumnName="WorkDays" />
+          <ScalarProperty Name="Longtime" ColumnName="Longtime" />
+          <ScalarProperty Name="MustIn" ColumnName="MustIn" />
+          <ScalarProperty Name="MustOut" ColumnName="MustOut" />
+          <ScalarProperty Name="IsFreeTime" ColumnName="IsFreeTime" />
+          <ScalarProperty Name="IsOverTime" ColumnName="IsOverTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCtrLogs">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserCtrLog">
+        <MappingFragment StoreEntitySet="UserCtrLog">
+          <ScalarProperty Name="Logid" ColumnName="Logid" />
+          <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+          <ScalarProperty Name="ULog" ColumnName="ULog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Userinfoes">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Userinfo">
+        <MappingFragment StoreEntitySet="Userinfo">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+          <ScalarProperty Name="Nation" ColumnName="Nation" />
+          <ScalarProperty Name="Brithday" ColumnName="Brithday" />
+          <ScalarProperty Name="EmployDate" ColumnName="EmployDate" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Duty" ColumnName="Duty" />
+          <ScalarProperty Name="NativePlace" ColumnName="NativePlace" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Educated" ColumnName="Educated" />
+          <ScalarProperty Name="Polity" ColumnName="Polity" />
+          <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+          <ScalarProperty Name="IsAtt" ColumnName="IsAtt" />
+          <ScalarProperty Name="Isovertime" ColumnName="Isovertime" />
+          <ScalarProperty Name="Isrest" ColumnName="Isrest" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="MgFlag" ColumnName="MgFlag" />
+          <ScalarProperty Name="CardNum" ColumnName="CardNum" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="UserFlag" ColumnName="UserFlag" />
+          <ScalarProperty Name="Groupid" ColumnName="Groupid" />
+          <ScalarProperty Name="workdaylong" ColumnName="workdaylong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Userinfo_BK">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Userinfo_BK">
+        <MappingFragment StoreEntitySet="Userinfo_BK">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+          <ScalarProperty Name="Nation" ColumnName="Nation" />
+          <ScalarProperty Name="Brithday" ColumnName="Brithday" />
+          <ScalarProperty Name="EmployDate" ColumnName="EmployDate" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Duty" ColumnName="Duty" />
+          <ScalarProperty Name="NativePlace" ColumnName="NativePlace" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Educated" ColumnName="Educated" />
+          <ScalarProperty Name="Polity" ColumnName="Polity" />
+          <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+          <ScalarProperty Name="IsAtt" ColumnName="IsAtt" />
+          <ScalarProperty Name="Isovertime" ColumnName="Isovertime" />
+          <ScalarProperty Name="Isrest" ColumnName="Isrest" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="MgFlag" ColumnName="MgFlag" />
+          <ScalarProperty Name="CardNum" ColumnName="CardNum" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="UserFlag" ColumnName="UserFlag" />
+          <ScalarProperty Name="Groupid" ColumnName="Groupid" />
+          <ScalarProperty Name="workdaylong" ColumnName="workdaylong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserinfoBackups">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserinfoBackup">
+        <MappingFragment StoreEntitySet="UserinfoBackup">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+          <ScalarProperty Name="Nation" ColumnName="Nation" />
+          <ScalarProperty Name="Brithday" ColumnName="Brithday" />
+          <ScalarProperty Name="EmployDate" ColumnName="EmployDate" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Duty" ColumnName="Duty" />
+          <ScalarProperty Name="NativePlace" ColumnName="NativePlace" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Educated" ColumnName="Educated" />
+          <ScalarProperty Name="Polity" ColumnName="Polity" />
+          <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+          <ScalarProperty Name="IsAtt" ColumnName="IsAtt" />
+          <ScalarProperty Name="Isovertime" ColumnName="Isovertime" />
+          <ScalarProperty Name="Isrest" ColumnName="Isrest" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="MgFlag" ColumnName="MgFlag" />
+          <ScalarProperty Name="Cardnum" ColumnName="Cardnum" />
+          <ScalarProperty Name="Machineid" ColumnName="Machineid" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="UserFlag" ColumnName="UserFlag" />
+          <ScalarProperty Name="Groupid" ColumnName="Groupid" />
+          <ScalarProperty Name="workdaylong" ColumnName="workdaylong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLeaves">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserLeave">
+        <MappingFragment StoreEntitySet="UserLeave">
+          <ScalarProperty Name="Lsh" ColumnName="Lsh" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="LeaveClassid" ColumnName="LeaveClassid" />
+          <ScalarProperty Name="Whys" ColumnName="Whys" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPowers">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserPower">
+        <MappingFragment StoreEntitySet="UserPower">
+          <ScalarProperty Name="Logid" ColumnName="Logid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+          <ScalarProperty Name="PowerFlag" ColumnName="PowerFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserShifts">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserShift">
+        <MappingFragment StoreEntitySet="UserShift">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Schid" ColumnName="Schid" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTempShifts">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserTempShift">
+        <MappingFragment StoreEntitySet="UserTempShift">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Timeid" ColumnName="Timeid" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="IsOvertime" ColumnName="IsOvertime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_Class">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.V_Class">
+        <MappingFragment StoreEntitySet="V_Class">
+          <ScalarProperty Name="Schid" ColumnName="Schid" />
+          <ScalarProperty Name="Schname" ColumnName="Schname" />
+          <ScalarProperty Name="Cycles" ColumnName="Cycles" />
+          <ScalarProperty Name="Units" ColumnName="Units" />
+          <ScalarProperty Name="AutoClass" ColumnName="AutoClass" />
+          <ScalarProperty Name="BeginDay" ColumnName="BeginDay" />
+          <ScalarProperty Name="Timeid" ColumnName="Timeid" />
+          <ScalarProperty Name="Timename" ColumnName="Timename" />
+          <ScalarProperty Name="Intime" ColumnName="Intime" />
+          <ScalarProperty Name="Outtime" ColumnName="Outtime" />
+          <ScalarProperty Name="BIntime" ColumnName="BIntime" />
+          <ScalarProperty Name="EIntime" ColumnName="EIntime" />
+          <ScalarProperty Name="BOuttime" ColumnName="BOuttime" />
+          <ScalarProperty Name="EOuttime" ColumnName="EOuttime" />
+          <ScalarProperty Name="Latetime" ColumnName="Latetime" />
+          <ScalarProperty Name="Leavetime" ColumnName="Leavetime" />
+          <ScalarProperty Name="WorkDays" ColumnName="WorkDays" />
+          <ScalarProperty Name="Longtime" ColumnName="Longtime" />
+          <ScalarProperty Name="MustIn" ColumnName="MustIn" />
+          <ScalarProperty Name="MustOut" ColumnName="MustOut" />
+          <ScalarProperty Name="IsFreetime" ColumnName="IsFreetime" />
+          <ScalarProperty Name="IsOvertime" ColumnName="IsOvertime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_UserClient">
+      <EntityTypeMapping TypeName="Anviz_Data_BaseModel.V_UserClient">
+        <MappingFragment StoreEntitySet="V_UserClient">
+          <ScalarProperty Name="Logid" ColumnName="Logid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+          <ScalarProperty Name="PowerFlag" ColumnName="PowerFlag" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="CardNum" ColumnName="CardNum" />
+          <ScalarProperty Name="Deptid" ColumnName="Deptid" />
+          <ScalarProperty Name="UserFlag" ColumnName="UserFlag" />
+          <ScalarProperty Name="MgFlag" ColumnName="MgFlag" />
+          <ScalarProperty Name="Groupid" ColumnName="Groupid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployes" FunctionName="Anviz_Data_BaseModel.Store.GetEmployes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Anviz_Data_BaseModel.GetEmployes_Result">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Hora_de_LLegada_Lunes" ColumnName="Hora de LLegada Lunes" />
+          <ScalarProperty Name="Hora_de_salida_Lunes" ColumnName="Hora de salida Lunes" />
+          <ScalarProperty Name="Monday" ColumnName="Monday" />
+          <ScalarProperty Name="Hora_de_LLegada_Martes" ColumnName="Hora de LLegada Martes" />
+          <ScalarProperty Name="Hora_de_salida_Martes" ColumnName="Hora de salida Martes" />
+          <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+          <ScalarProperty Name="Hora_de_LLegada_Miercoles" ColumnName="Hora de LLegada Miercoles" />
+          <ScalarProperty Name="Hora_de_salida_Miercoles" ColumnName="Hora de salida Miercoles" />
+          <ScalarProperty Name="Wednsday" ColumnName="Wednsday" />
+          <ScalarProperty Name="Hora_de_LLegada_Jueves" ColumnName="Hora de LLegada Jueves" />
+          <ScalarProperty Name="Hora_de_salida_Jueves" ColumnName="Hora de salida Jueves" />
+          <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+          <ScalarProperty Name="Hora_de_LLegada_Viernes" ColumnName="Hora de LLegada Viernes" />
+          <ScalarProperty Name="Hora_de_salida_Viernes" ColumnName="Hora de salida Viernes" />
+          <ScalarProperty Name="Friday" ColumnName="Friday" />
+          <ScalarProperty Name="Hora_de_LLegada_Sabado" ColumnName="Hora de LLegada Sabado" />
+          <ScalarProperty Name="Hora_de_salida_Sabado" ColumnName="Hora de salida Sabado" />
+          <ScalarProperty Name="Saturday" ColumnName="Saturday" />
+          <ScalarProperty Name="Hora_de_LLegada_Domingo" ColumnName="Hora de LLegada Domingo" />
+          <ScalarProperty Name="Hora_de_salida_Domingo" ColumnName="Hora de salida Domingo" />
+          <ScalarProperty Name="Sunday" ColumnName="Sunday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Anviz_Data_BaseModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Anviz_Data_BaseModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Anviz_Data_BaseModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Anviz_Data_BaseModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Anviz_Data_BaseModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_matrix_weekdays" FunctionName="Anviz_Data_BaseModel.Store.sp_matrix_weekdays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Anviz_Data_BaseModel.sp_matrix_weekdays_Result">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Hora_de_LLegada_Lunes" ColumnName="Hora de LLegada Lunes" />
+          <ScalarProperty Name="Hora_de_salida_Lunes" ColumnName="Hora de salida Lunes" />
+          <ScalarProperty Name="Monday" ColumnName="Monday" />
+          <ScalarProperty Name="Hora_de_LLegada_Martes" ColumnName="Hora de LLegada Martes" />
+          <ScalarProperty Name="Hora_de_salida_Martes" ColumnName="Hora de salida Martes" />
+          <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+          <ScalarProperty Name="Hora_de_LLegada_Miercoles" ColumnName="Hora de LLegada Miercoles" />
+          <ScalarProperty Name="Hora_de_salida_Miercoles" ColumnName="Hora de salida Miercoles" />
+          <ScalarProperty Name="Wednsday" ColumnName="Wednsday" />
+          <ScalarProperty Name="Hora_de_LLegada_Jueves" ColumnName="Hora de LLegada Jueves" />
+          <ScalarProperty Name="Hora_de_salida_Jueves" ColumnName="Hora de salida Jueves" />
+          <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+          <ScalarProperty Name="Hora_de_LLegada_Viernes" ColumnName="Hora de LLegada Viernes" />
+          <ScalarProperty Name="Hora_de_salida_Viernes" ColumnName="Hora de salida Viernes" />
+          <ScalarProperty Name="Friday" ColumnName="Friday" />
+          <ScalarProperty Name="Hora_de_LLegada_Sabado" ColumnName="Hora de LLegada Sabado" />
+          <ScalarProperty Name="Hora_de_salida_Sabado" ColumnName="Hora de salida Sabado" />
+          <ScalarProperty Name="Saturday" ColumnName="Saturday" />
+          <ScalarProperty Name="Hora_de_LLegada_Domingo" ColumnName="Hora de LLegada Domingo" />
+          <ScalarProperty Name="Hora_de_salida_Domingo" ColumnName="Hora de salida Domingo" />
+          <ScalarProperty Name="Sunday" ColumnName="Sunday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Anviz_Data_BaseModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Anviz_Data_BaseModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

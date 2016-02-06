@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59FA6783-7D2F-44F1-9D32-F7C5ABB2A6AB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleApplication2._0</RootNamespace>
+    <AssemblyName>ConsoleApplication2.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mandrill">
+      <HintPath>..\packages\Mandrill.2.2.12.0\lib\net45\Mandrill.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\MongoDB.Driver.2.2.3\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddTimeSet.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnvizDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnvizDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnvizDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnvizDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnvizDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BasePara.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Checkinout.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckLog.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientSet.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DefineField.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dept.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FingerClient.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmployes_Result.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Holiday.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveClass.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemStat.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPinfo.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPLog.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutProg.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchTime.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_matrix_weekdays_Result.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatItem.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTable.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Checkinout.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UpdateClient.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtrLog.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Userinfo.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserinfoBackup.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Userinfo_BK.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserLeave.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserPower.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserShift.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTempShift.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Class.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_UserClient.cs">
+      <DependentUpon>AnvizDb.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="AnvizDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AnvizDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AnvizDb.edmx.diagram">
+      <DependentUpon>AnvizDb.edmx</DependentUpon>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnvizDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AnvizDb.edmx</DependentUpon>
+      <LastGenOutput>AnvizDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AnvizDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AnvizDb.edmx</DependentUpon>
+      <LastGenOutput>AnvizDb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
