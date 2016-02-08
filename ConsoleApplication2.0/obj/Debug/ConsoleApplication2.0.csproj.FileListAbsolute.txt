@@ -35,3 +35,4 @@ C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\b
 C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\bin\Debug\Newtonsoft.Json.xml
 C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.exe
 C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.pdb
+C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.csprojResolveAssemblyReference.cache
