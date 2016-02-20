@@ -73,7 +73,7 @@ namespace ConsoleApplication1
             if (to != null)
             {
                 //  to = "rodolfo.vesely@laureate.net"; //To address    
-                 to = "rayelmejor1@gmail.com"; //From address    \
+              // to = "rayelmejor1@gmail.com"; //From address    \
                 // to = "Jose.Posas@laureate.net";
                 string subject = "Sending " + name + " email with a asistance report  " + dept_name;
                 string mailbody = "Hello " + name + " this is your assistance report the past week " + dept_name;
@@ -137,9 +137,10 @@ namespace ConsoleApplication1
             string monday = lastmonday.ToString("MM-dd-yyyy");
             string path = "";
             //  monday = ("12-14-2015");
-            Anviz_Data_BaseEntities dc = new Anviz_Data_BaseEntities();
+            Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2();
+ 
             var client = new MongoClient();
-            var db = client.GetDatabase("1");
+            var db = client.GetDatabase("admin");
             
             var collection = db.GetCollection<infoDept>("managers");
             var document = db.GetCollection<Getreport>("managers");
@@ -179,9 +180,10 @@ namespace ConsoleApplication1
             try{
             var whynot = all.Count() <= 1;
             }
-            catch
+            catch (Exception e)
             {
                 Console.WriteLine("Error!!!: cannot conect with Mssql!!!!  ................................");
+                Console.WriteLine(e);
                 Console.ReadLine();
                 return;
 
@@ -214,7 +216,7 @@ namespace ConsoleApplication1
                         //      allPDF(monday, sub.deptID, sub.subdept, monday);
                         Console.WriteLine("CreateReportforSubDept" + sub.subdept + "...........................................");
                         CreatePdf(sub.subdept, sub.deptID, monday, true, path);
-                        sendEmail(monday, sub.subName, sub.subdept, sub.subEmail, "\\SubDepts\\");
+                       sendEmail(monday, sub.subName, sub.subdept, sub.subEmail, "\\SubDepts\\");
 
 
                     }
@@ -235,7 +237,17 @@ namespace ConsoleApplication1
                         // allPDF(monday, i.Id_Dept, i.Nombre_Dept, monday);
 
                         //   sendEmail(monday, i.Name[y], i.Nombre_Dept,i.correo[y]);
-                        sendEmail(monday, i.Name[y], "All" + i.Nombre_Dept, i.correo[y], "\\Depts\\");
+                         sendEmail(monday, i.Name[y], "All" + i.Nombre_Dept, i.correo[y], "\\Depts\\");
+                        //if (oneweekAffter.Month != now.Month)
+                        //{
+
+                        //    Console.WriteLine("ultimo lunes ................................");
+                        //}
+                        //else
+                        //{
+
+                        //    Console.WriteLine(" no es el ultimo lunes b................................");
+                        //}
 
                     }
 
@@ -243,24 +255,15 @@ namespace ConsoleApplication1
 
             }
 
-            sendEmail(monday, "Flor de Liz Reyes", "LNO-HN", "flor.reyes@laureate.net", "\\Depts\\");
-            sendEmail(monday, "Flor de Liz Reyes", "LNO-HN", "gina.almendares@laureate.net", "\\Depts\\");
+           sendEmail(monday, "Flor de Liz Reyes", "LNO-HN", "flor.reyes@laureate.net", "\\Depts\\");
+          sendEmail(monday, "Flor de Liz Reyes", "LNO-HN", "gina.almendares@laureate.net", "\\Depts\\");
             path = @"C:\\Pdf\\Asistance_Report_" + monday + "\\Employes\\";
             foreach (var items in all)
             {
-                CreatePdf(items.name, items.userid, monday, false, path);
+               CreatePdf(items.name, items.userid, monday, false, path);
                 sendEmail(monday, items.name, items.name, items.email, "\\Employes\\");
             }
-            if (oneweekAffter.Month != now.Month)
-            {
-
-                Console.WriteLine("ultimo lunes ................................");
-            }
-            else
-            {
-
-                Console.WriteLine(" no es el ultimo lunes b................................");
-            }
+    
         }
 
 
@@ -335,7 +338,7 @@ namespace ConsoleApplication1
        
 
             //  var init = Convert.ToInt32(deptID.ToString());
-            using (Anviz_Data_BaseEntities dc = new Anviz_Data_BaseEntities())
+            using (Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2())
             {
                 //   all = (from e in dc).ToList();
           
@@ -343,79 +346,7 @@ namespace ConsoleApplication1
                 if (type == true)
                 {
                     all = (from e in dc.sp_matrix_weekdays(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                    listWeek1 = (from e in dc.sp_matrix_weekdays(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                    listWeek2 = (from e in dc.sp_matrix_weekdays(deptID, (week2.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                    listWeek3 = (from e in dc.sp_matrix_weekdays(deptID, (week3.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                    listWeek4 = (from e in dc.sp_matrix_weekdays(deptID, (week4.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                    var y = week2.Year;
-                    var Lr3 = listWeek1.Concat(listWeek2).Concat(listWeek3).Concat(listWeek4).ToList();
-             
-                    if (y % 4 == 0 && (y % 100 != 0 || y % 400 == 0) && DateTime.Today.Month==3)
-                    {
-                        DateTime week5 = Convert.ToDateTime(dates).AddDays(-28);
-                        List<test> listWeek5 = (from e in dc.sp_matrix_weekdays(deptID, (week5.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                        Lr3 = Lr3.Concat(listWeek5).ToList();
-                    }
-
-                    
-                             foreach (var row in Lr3)
-                             {
-                                 int index = potato.FindIndex(a => a.Nombre == row.Nombre);
-                                 if (!(index >= 0))
-                                 {
-                                     potato.Add(row);
-
-                                 }
-                                 else
-                                 {
-                                     var tomato = potato[index];
-                                     decimal? tempHoursi = (row.HorasMonday.Equals(null) ? 0:row.HorasMonday);
-                                     decimal? tempHoursi2 =(row.HorasTuesday.Equals(null) ? 0:row.HorasTuesday) ;
-                                     decimal? tempHoursi3 = (row.HorasWendnsday.Equals(null) ? 0 : row.HorasWendnsday);
-                                     decimal? tempHoursi4 = (row.HorasThursday.Equals(null) ? 0:row.HorasThursday);
-                                     decimal? tempHoursi5 = (row.HorasFriday.Equals(null) ? 0:row.HorasFriday);
-                                     decimal? tempHoursi6 = (row.HorasSaturday.Equals(null) ? 0:row.HorasSaturday);
-                                     decimal? tempHoursi7 = (row.HorasSunday.Equals(null) ? 0:row.HorasSunday);
-
-
-                                     decimal? tempHours2 = (tomato.HorasMonday.Equals(null) ?0:tomato.HorasMonday) + tempHoursi;
-                                     decimal? tempHours3 = (tomato.HorasTuesday.Equals(null) ?0:tomato.HorasTuesday)+ tempHoursi2;
-                                     decimal? tempHours4 = (tomato.HorasWendnsday.Equals(null) ?0:tomato.HorasWendnsday) + tempHoursi3;
-                                     decimal? tempHours5 = (tomato.HorasThursday.Equals(null) ?0:tomato.HorasThursday) + tempHoursi4;
-                                     decimal? tempHours6 = (tomato.HorasFriday.Equals(null) ?0:tomato.HorasFriday) + tempHoursi5;
-                                     decimal? tempHours7 = (tomato.HorasSaturday.Equals(null) ?0:tomato.HorasSaturday) + tempHoursi6;
-                                     decimal? tempHours8 = (tomato.HorasSunday.Equals(null) ?0:tomato.HorasSunday) + tempHoursi7;
-
-
-                                     tomato.HorasMonday = tempHours2;
-                                     tomato.HorasTuesday = tempHours3;
-                                     tomato.HorasWendnsday = tempHours4;
-                                     tomato.HorasThursday = tempHours5;
-                                     tomato.HorasFriday = tempHours6;
-                                     tomato.HorasSaturday = tempHours7;
-                                     tomato.HorasSunday = tempHours8;
-
-                                     potato[index] = tomato;
-                                 }
-
-
-                                 all = potato;
-
-                             }
-                    /* alli = (from e in dc.sp_matrix_weekdays(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                                listWeek1 = (from e in dc.sp_matrix_weekdays(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                        listWeek2 = (from e in dc.sp_matrix_weekdays(deptID, dates ) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-
-                        var Lr3 = listWeek1.Concat(listWeek2).ToList();
-                        foreach (var row in Lr3)
-                        {
-                          int index =potato.FindIndex(a => a.Nombre == row.Nombre);
-
-                        }       
-        
-                    */
-                    //    WorkingHoursPerDay = (from i in dc.sp_GetWorkingHoursPerDay(1, Convert.ToDateTime("08-13-2015").AddDays(w)) select new WorkingPerDay { Name = i.Name, HourInput = i.horaEntrada, HourOutput = i.horasalida, workingHours = Convert.ToInt32(i.horaTrabajada) }).ToList();
-                    //     list[w] = WorkingHoursPerDay.ToList().ToArray();
+                  
                 }
                 else
                 {
@@ -714,6 +645,8 @@ namespace ConsoleApplication1
 
         public void CreatePdf(IQueryable<string> test, IMongoCollection<infoDept> collection, string dates, bool type, string path)
         {
+            DateTime now = DateTime.Now;
+            var oneweekAffter = now.AddDays(7);
 
             Document document = new Document(PageSize.A1, 5, 5, 155, 15);
             int Id = 0;
@@ -746,8 +679,17 @@ namespace ConsoleApplication1
                                     Id = Convert.ToInt32(sub.deptID);
                                     PdfPTable table = new PdfPTable(24);
                                     table.TotalWidth = 5000f;
-                                    document.Add(archive(table, Id, sub.subdept, dates, type));
-                                }
+                                    if (oneweekAffter.Month != now.Month)
+                                    {
+                                        document.Add(ArchiveSpin4(table, Id, sub.subdept, dates, type));
+                               
+                                    }
+                                    else
+                                    {
+                                        document.Add(archive(table, Id, sub.subdept, dates, type));
+                                   
+                                      }
+                                     }
                             }
                         }
                         document.Close();
@@ -769,7 +711,75 @@ namespace ConsoleApplication1
                     for (var y = 0; y < i.Name.Length; y++)
                     {
 
+                        if (oneweekAffter.Month != now.Month)
+                        {
 
+                            Console.WriteLine("ultimo lunes ................................");
+                            filepath = path + "\\Asistance_Report_All_" + i.Nombre_Dept + "_" + dates + ".pdf";
+                            if ((!System.IO.File.Exists(filepath)))
+                            {
+                                using (FileStream output = new FileStream((filepath), FileMode.Create))
+                                {
+                                    Document Alldocument = new Document(PageSize.A1, 5, 5, 155, 15);
+
+                                    using (PdfWriter writer = PdfWriter.GetInstance(Alldocument, output))
+                                    {
+
+
+                                        Alldocument.Open();
+                                        List<Getreport> get = new List<Getreport>(i.GetReport);
+                                        foreach (var sub in get)
+                                        {
+                                            Id = Convert.ToInt32(sub.deptID);
+                                            PdfPTable table = new PdfPTable(24);
+                                            table.TotalWidth = 5000f;
+                                            Alldocument.Add(ArchiveSpin4(table, Id, sub.subdept, dates, type));
+                                        }
+                                        Alldocument.Close();
+                                        output.Close();
+                                    }
+
+                                }
+
+
+                            }
+                        }
+                        else
+                        {
+
+                            Console.WriteLine(" no es el ultimo lunes del mes................................");
+                            filepath = path + "\\Asistance_Report_All" + i.Nombre_Dept + "_" + dates + ".pdf";
+                            if ((!System.IO.File.Exists(filepath)))
+                            {
+                                using (FileStream output = new FileStream((filepath), FileMode.Create))
+                                {
+                                    Document Alldocument = new Document(PageSize.A1, 5, 5, 155, 15);
+
+                                    using (PdfWriter writer = PdfWriter.GetInstance(Alldocument, output))
+                                    {
+
+
+                                        Alldocument.Open();
+                                        List<Getreport> get = new List<Getreport>(i.GetReport);
+                                        foreach (var sub in get)
+                                        {
+                                            Id = Convert.ToInt32(sub.deptID);
+                                            PdfPTable table = new PdfPTable(24);
+                                            table.TotalWidth = 5000f;
+                                            //archive
+                                            Alldocument.Add(archive(table, Id, sub.subdept, dates, type));
+                                        }
+                                        Alldocument.Close();
+                                        output.Close();
+                                    }
+
+                                }
+
+
+                            }
+                        }
+
+                        /*
                         filepath = path + "\\Asistance_Report_All" + i.Nombre_Dept + "_" + dates + ".pdf";
                         if ((!System.IO.File.Exists(filepath)))
                         {
@@ -798,6 +808,7 @@ namespace ConsoleApplication1
 
 
                         }
+                        */
                     }
                 }
             }
@@ -832,13 +843,10 @@ namespace ConsoleApplication1
 
             float[] widths = new float[] { 1300f, 1300, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f, 1300f };
             table.SetWidths(widths);
-            DateTime week2 = Convert.ToDateTime(dates);
-            week2.AddDays(-7);
-            DateTime week3 = Convert.ToDateTime(dates);
-            week3.AddDays(-14);
-            DateTime week4 = Convert.ToDateTime(dates);
-            week4.AddDays(-21);
-                
+            DateTime week2 = Convert.ToDateTime(dates).AddDays(-7);
+            DateTime week3 = Convert.ToDateTime(dates).AddDays(-14);
+            DateTime week4 = Convert.ToDateTime(dates).AddDays(-21);
+            DateTime week1 = Convert.ToDateTime(dates);
             List<test> listWeek1 = new List<test>();
             List<test> listWeek2 = new List<test>();
             List<test> listWeek3 = new List<test>();
@@ -846,72 +854,83 @@ namespace ConsoleApplication1
              List<test> potato = new List<test>();
             //  var init = Convert.ToInt32(deptID.ToString());
             int count = -7;
-          
+            
             for (int i = 0; i < 3; i++)
             {
-                
-                using (Anviz_Data_BaseEntities dc = new Anviz_Data_BaseEntities())
+
+                using (Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2())
                 {
                     //   all = (from e in dc).ToList();
                     if (type == true)
                     {
-                        all = (from e in dc.sp_matrix_weekdays(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                        listWeek1 = (from e in dc.sp_matrix_weekdays(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                        listWeek2 = (from e in dc.sp_matrix_weekdays(deptID, Convert.ToString(week3)) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                        listWeek3 = (from e in dc.sp_matrix_weekdays(deptID, Convert.ToString(week3)) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
-                        listWeek4 = (from e in dc.sp_matrix_weekdays(deptID, Convert.ToString(week4)) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
+                        listWeek1 = (from e in dc.sp_matrix_weekdays(deptID, (week1.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
+                        listWeek2 = (from e in dc.sp_matrix_weekdays(deptID, (week2.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
+                        listWeek3 = (from e in dc.sp_matrix_weekdays(deptID, (week3.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
+                        listWeek4 = (from e in dc.sp_matrix_weekdays(deptID, (week4.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
+                        var y = week2.Year;
+                        var Lr3 = listWeek1.Concat(listWeek2).Concat(listWeek3).Concat(listWeek4).ToList();
 
-                    var Lr3 = listWeek1.Concat(listWeek2).Concat(listWeek3).Concat(listWeek4).ToList();
-                    foreach (var row in Lr3)
-                    {
-                        int index = potato.FindIndex(a => a.Nombre == row.Nombre);
-                        if (!(index>= 0))
+                        if (y % 4 == 0 && (y % 100 != 0 || y % 400 == 0) && DateTime.Today.Month==3)
                         {
-                            potato.Add(row);
-
-                        }
-                        else{
-                            var tomato = potato[index];
-                            decimal? tempHoursi = row.HorasMonday;
-                            decimal? tempHoursi2 = row.HorasTuesday;
-                            decimal? tempHoursi3 = row.HorasWendnsday;
-                            decimal? tempHoursi4 = row.HorasThursday;
-                            decimal? tempHoursi5 = row.HorasFriday;
-                            decimal? tempHoursi6 = row.HorasSaturday;
-                            decimal? tempHoursi7 = row.HorasSunday;
-                                                        
-                            
-                            decimal?  tempHours2 = tomato.HorasMonday + tempHoursi;
-                            decimal? tempHours3 = tomato.HorasTuesday + tempHoursi2;
-                            decimal? tempHours4 = tomato.HorasWendnsday + tempHoursi3;
-                            decimal? tempHours5 = tomato.HorasThursday + tempHoursi4;
-                            decimal? tempHours6 = tomato.HorasFriday + tempHoursi5;
-                            decimal? tempHours7 = tomato.HorasSaturday + tempHoursi6;
-                            decimal? tempHours8 = tomato.HorasSunday + tempHoursi7;
-
-
-                            tomato.HorasMonday = tempHours2;
-                            tomato.HorasTuesday = tempHours3;
-                            tomato.HorasWendnsday = tempHours4;
-                            tomato.HorasThursday = tempHours5;
-                            tomato.HorasFriday = tempHours6;
-                            tomato.HorasSaturday = tempHours7;
-                            tomato.HorasSunday = tempHours8;
-                            
-                            potato[index] = tomato;
+                            DateTime week5 = Convert.ToDateTime(dates).AddDays(-28);
+                            List<test> listWeek5 = (from e in dc.sp_matrix_weekdays(deptID, (week5.ToString("MM-dd-yyyy"))) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
+                            Lr3 = Lr3.Concat(listWeek5).ToList();
                         }
 
-                    
-                    all = potato;
-                        }
+
+                                 foreach (var row in Lr3)
+                                 {
+                                     int index = potato.FindIndex(a => a.Nombre == row.Nombre);
+                                     if (!(index >= 0))
+                                     {
+                                         potato.Add(row);
+
+                                     }
+                                     else
+                                     {
+                                         var tomato = potato[index];
+                                         decimal? tempHoursi = (row.HorasMonday.Equals(null) ? 0:row.HorasMonday);
+                                         decimal? tempHoursi2 =(row.HorasTuesday.Equals(null) ? 0:row.HorasTuesday) ;
+                                         decimal? tempHoursi3 = (row.HorasWendnsday.Equals(null) ? 0 : row.HorasWendnsday);
+                                         decimal? tempHoursi4 = (row.HorasThursday.Equals(null) ? 0:row.HorasThursday);
+                                         decimal? tempHoursi5 = (row.HorasFriday.Equals(null) ? 0:row.HorasFriday);
+                                         decimal? tempHoursi6 = (row.HorasSaturday.Equals(null) ? 0:row.HorasSaturday);
+                                         decimal? tempHoursi7 = (row.HorasSunday.Equals(null) ? 0:row.HorasSunday);
+
+
+                                         decimal? tempHours2 = (tomato.HorasMonday.Equals(null) ?0:tomato.HorasMonday) + tempHoursi;
+                                         decimal? tempHours3 = (tomato.HorasTuesday.Equals(null) ?0:tomato.HorasTuesday)+ tempHoursi2;
+                                         decimal? tempHours4 = (tomato.HorasWendnsday.Equals(null) ?0:tomato.HorasWendnsday) + tempHoursi3;
+                                         decimal? tempHours5 = (tomato.HorasThursday.Equals(null) ?0:tomato.HorasThursday) + tempHoursi4;
+                                         decimal? tempHours6 = (tomato.HorasFriday.Equals(null) ?0:tomato.HorasFriday) + tempHoursi5;
+                                         decimal? tempHours7 = (tomato.HorasSaturday.Equals(null) ?0:tomato.HorasSaturday) + tempHoursi6;
+                                         decimal? tempHours8 = (tomato.HorasSunday.Equals(null) ?0:tomato.HorasSunday) + tempHoursi7;
+
+
+                                         tomato.HorasMonday = tempHours2;
+                                         tomato.HorasTuesday = tempHours3;
+                                          tomato.HorasWendnsday = tempHours4;
+                                         tomato.HorasThursday = tempHours5;
+                                         tomato.HorasFriday = tempHours6;
+                                         tomato.HorasSaturday = tempHours7;
+                                         tomato.HorasSunday = tempHours8;
+
+                                         potato[index] = tomato;
+                                     }
+
+
+                                     all = potato;
+
+                                 }
+                
                         //    WorkingHoursPerDay = (from i in dc.sp_GetWorkingHoursPerDay(1, Convert.ToDateTime("08-13-2015").AddDays(w)) select new WorkingPerDay { Name = i.Name, HourInput = i.horaEntrada, HourOutput = i.horasalida, workingHours = Convert.ToInt32(i.horaTrabajada) }).ToList();
                         //     list[w] = WorkingHoursPerDay.ToList().ToArray();
-                    }
+                    }/*
                     else
                     {
                         all = (from e in dc.GetEmployes(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday }).ToList();
 
-                    }
+                    }*/
             
                 }
                
@@ -947,36 +966,28 @@ namespace ConsoleApplication1
             nombre.VerticalAlignment = 1;
             table.AddCell(nombre);
 
-            PdfPCell june = new PdfPCell(new Phrase("Monday  " + "\n" + Convert.ToDateTime(date).ToShortDateString().ToString(), Headers));
+            PdfPCell june = new PdfPCell(new Phrase("Monday  " + "\n"));
             june.BorderWidthRight = 1;
             june.HorizontalAlignment = 1;
             june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
             june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
             june.Colspan = 3;
             table.AddCell(june);
-            june = new PdfPCell(new Phrase("Tuesday  " + "\n" + Convert.ToDateTime(date).AddDays(1).ToShortDateString(), Headers));
+            june = new PdfPCell(new Phrase("Tuesday  " + "\n" ));
             june.BorderWidthRight = 1;
             june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
             june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
             june.HorizontalAlignment = 1;
             june.Colspan = 3;
             table.AddCell(june);
-            june = new PdfPCell(new Phrase("Wednesday  " + "\n" + Convert.ToDateTime(date).AddDays(2).ToShortDateString(), Headers));
+            june = new PdfPCell(new Phrase("Wednesday  " + "\n"  ));
             june.BorderWidthRight = 1;
             june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
             june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
             june.HorizontalAlignment = 1;
             june.Colspan = 3;
             table.AddCell(june);
-            june = new PdfPCell(new Phrase("Thursday  " + "\n" + Convert.ToDateTime(date).AddDays(3).ToShortDateString(), Headers));
-            june.BorderWidthRight = 1;
-            june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
-            june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-            june.HorizontalAlignment = 1;
-            june.Colspan = 3;
-            table.AddCell(june);
-
-            june = new PdfPCell(new Phrase("Friday   " + "\n" + Convert.ToDateTime(date).AddDays(4).ToShortDateString(), Headers));
+            june = new PdfPCell(new Phrase("Thursday  " + "\n" ));
             june.BorderWidthRight = 1;
             june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
             june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
@@ -984,15 +995,7 @@ namespace ConsoleApplication1
             june.Colspan = 3;
             table.AddCell(june);
 
-
-            june = new PdfPCell(new Phrase("Saturday  " + "\n" + Convert.ToDateTime(date).AddDays(5).ToShortDateString(), Headers));
-            june.BorderWidthRight = 1;
-            june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
-            june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-            june.HorizontalAlignment = 1;
-            june.Colspan = 3;
-            table.AddCell(june);
-            june = new PdfPCell(new Phrase("Sunday   " + "\n" + Convert.ToDateTime(date).AddDays(6).ToShortDateString(), Headers));
+            june = new PdfPCell(new Phrase("Friday   " + "\n" ));
             june.BorderWidthRight = 1;
             june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
             june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
@@ -1000,7 +1003,23 @@ namespace ConsoleApplication1
             june.Colspan = 3;
             table.AddCell(june);
 
-            june = new PdfPCell(new Phrase("Weekly Hours Worked", labels));
+
+            june = new PdfPCell(new Phrase("Saturday  " + "\n" ));
+            june.BorderWidthRight = 1;
+            june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
+            june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
+            june.HorizontalAlignment = 1;
+            june.Colspan = 3;
+            table.AddCell(june);
+            june = new PdfPCell(new Phrase("Sunday   " + "\n" ));
+            june.BorderWidthRight = 1;
+            june.BackgroundColor = new iTextSharp.text.BaseColor(247, 150, 70);
+            june.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
+            june.HorizontalAlignment = 1;
+            june.Colspan = 3;
+            table.AddCell(june);
+
+            june = new PdfPCell(new Phrase("Monthly Hours Worked", labels));
             june.BorderWidthRight = 1;
             june.Rowspan = 2;
             june.HorizontalAlignment = 1;
@@ -1017,24 +1036,13 @@ namespace ConsoleApplication1
 
             for (var y = 0; y <= 6; y++)
             {
-                In = new PdfPCell(new Phrase("In", labels));
-
-                In.BackgroundColor = new iTextSharp.text.BaseColor(89, 89, 89);
-                In.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-                In.HorizontalAlignment = 1;
-                table.AddCell(In);
-
-                OUT = new PdfPCell(new Phrase("Out", labels));
-                OUT.BackgroundColor = new iTextSharp.text.BaseColor(89, 89, 89);
-                OUT.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-                OUT.HorizontalAlignment = 1;
-                table.AddCell(OUT);
-
+               
                 second = new PdfPCell(new Phrase("Worked Hours", labels));
                 second.BackgroundColor = new iTextSharp.text.BaseColor(89, 89, 89);
                 second.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
                 second.BorderWidthRight = 1;
                 second.HorizontalAlignment = 1;
+                second.Colspan = 3;
                 table.AddCell(second);
 
 
@@ -1050,110 +1058,56 @@ namespace ConsoleApplication1
                 cellName.BorderWidthRight = 1;
                 table.AddCell(cellName);
 
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaMonday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
-                
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaMonday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
                 cellMonday = new PdfPCell(new Phrase((item.HorasMonday).ToString()));
                 cellMonday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                 cellMonday.BorderWidthRight = 1;
                 cellMonday.HorizontalAlignment = 1;
+                cellMonday.Colspan = 3;
                 table.AddCell(cellMonday);
 
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaTuesday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaTuesday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
 
                 cellTuesday = new PdfPCell(new Phrase((item.HorasTuesday).ToString()));
                 cellTuesday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                 cellTuesday.BorderWidthRight = 1;
                 cellTuesday.HorizontalAlignment = 1;
+                cellTuesday.Colspan = 3;
                 table.AddCell(cellTuesday);
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaWendnsday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaWendnsday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
 
                 cellWednesday = new PdfPCell(new Phrase((item.HorasWendnsday).ToString()));
                 cellWednesday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                 cellWednesday.BorderWidthRight = 1;
                 cellWednesday.HorizontalAlignment = 1;
+                cellWednesday.Colspan = 3;
                 table.AddCell(cellWednesday);
 
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaThursday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaThursday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
 
                 cellThursday = new PdfPCell(new Phrase((item.HorasThursday).ToString()));
                 cellThursday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                 cellThursday.BorderWidthRight = 1;
                 cellThursday.HorizontalAlignment = 1;
+                cellThursday.Colspan = 3;
                 table.AddCell(cellThursday);
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaFriday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaFriday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
 
                 cellfriday = new PdfPCell(new Phrase((item.HorasFriday).ToString()));
                 cellfriday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                 cellfriday.BorderWidthRight = 1;
                 cellfriday.HorizontalAlignment = 1;
+                cellfriday.Colspan = 3;
                 table.AddCell(cellfriday);
 
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaSaturday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaSaturday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
+                
                 cellsaturday = new PdfPCell(new Phrase((item.HorasSaturday).ToString()));
                 cellsaturday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                 cellsaturday.BorderWidthRight = 1;
                 cellsaturday.HorizontalAlignment = 1;
+                cellsaturday.Colspan = 3;
                 table.AddCell(cellsaturday);
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaSunday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
-
-                cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaSunday).ToShortTimeString().ToString());
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
 
                 cellsunday = new PdfPCell(new Phrase((item.HorasSunday).ToString()));
                 cellsunday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                 cellsunday.BorderWidthRight = 1;
                 cellsunday.HorizontalAlignment = 1;
+                cellsunday.Colspan = 3;
                 table.AddCell(cellsunday);
 
                 cell.Phrase = new Phrase(Convert.ToString(Convert.ToDecimal(item.HorasMonday) + Convert.ToDecimal(item.HorasTuesday) + Convert.ToDecimal(item.HorasWendnsday) + Convert.ToDecimal(item.HorasThursday) + Convert.ToDecimal(item.HorasFriday) + Convert.ToDecimal(item.HorasSaturday) + Convert.ToDecimal(item.HorasSunday)));

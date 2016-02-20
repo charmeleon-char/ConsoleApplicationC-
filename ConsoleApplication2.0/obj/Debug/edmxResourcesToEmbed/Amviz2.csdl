@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Anviz_Data_BaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Anviz_Data_BaseEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AddTimeSets" EntityType="Anviz_Data_BaseModel.AddTimeSet" />
+    <EntitySet Name="BaseParas" EntityType="Anviz_Data_BaseModel.BasePara" />
+    <EntitySet Name="Checkinouts" EntityType="Anviz_Data_BaseModel.Checkinout" />
+    <EntitySet Name="CheckLogs" EntityType="Anviz_Data_BaseModel.CheckLog" />
+    <EntitySet Name="ClientSets" EntityType="Anviz_Data_BaseModel.ClientSet" />
+    <EntitySet Name="DefineFields" EntityType="Anviz_Data_BaseModel.DefineField" />
+    <EntitySet Name="Depts" EntityType="Anviz_Data_BaseModel.Dept" />
+    <EntitySet Name="FingerClients" EntityType="Anviz_Data_BaseModel.FingerClient" />
+    <EntitySet Name="Holidays" EntityType="Anviz_Data_BaseModel.Holiday" />
+    <EntitySet Name="LeaveClasses" EntityType="Anviz_Data_BaseModel.LeaveClass" />
+    <EntitySet Name="MemStats" EntityType="Anviz_Data_BaseModel.MemStat" />
+    <EntitySet Name="OPinfoes" EntityType="Anviz_Data_BaseModel.OPinfo" />
+    <EntitySet Name="OPLogs" EntityType="Anviz_Data_BaseModel.OPLog" />
+    <EntitySet Name="OutProgs" EntityType="Anviz_Data_BaseModel.OutProg" />
+    <EntitySet Name="Schedules" EntityType="Anviz_Data_BaseModel.Schedule" />
+    <EntitySet Name="SchTimes" EntityType="Anviz_Data_BaseModel.SchTime" />
+    <EntitySet Name="StatItems" EntityType="Anviz_Data_BaseModel.StatItem" />
+    <EntitySet Name="Status" EntityType="Anviz_Data_BaseModel.Status" />
+    <EntitySet Name="sysdiagrams" EntityType="Anviz_Data_BaseModel.sysdiagram" />
+    <EntitySet Name="T_Checkinout" EntityType="Anviz_Data_BaseModel.T_Checkinout" />
+    <EntitySet Name="T_UpdateClient" EntityType="Anviz_Data_BaseModel.T_UpdateClient" />
+    <EntitySet Name="TimeTables" EntityType="Anviz_Data_BaseModel.TimeTable" />
+    <EntitySet Name="UserCtrLogs" EntityType="Anviz_Data_BaseModel.UserCtrLog" />
+    <EntitySet Name="Userinfoes" EntityType="Anviz_Data_BaseModel.Userinfo" />
+    <EntitySet Name="Userinfo_BK" EntityType="Anviz_Data_BaseModel.Userinfo_BK" />
+    <EntitySet Name="UserinfoBackups" EntityType="Anviz_Data_BaseModel.UserinfoBackup" />
+    <EntitySet Name="UserLeaves" EntityType="Anviz_Data_BaseModel.UserLeave" />
+    <EntitySet Name="UserPowers" EntityType="Anviz_Data_BaseModel.UserPower" />
+    <EntitySet Name="UserShifts" EntityType="Anviz_Data_BaseModel.UserShift" />
+    <EntitySet Name="UserTempShifts" EntityType="Anviz_Data_BaseModel.UserTempShift" />
+    <EntitySet Name="V_Class" EntityType="Anviz_Data_BaseModel.V_Class" />
+    <EntitySet Name="V_UserClient" EntityType="Anviz_Data_BaseModel.V_UserClient" />
+    <FunctionImport Name="GetEmployes" ReturnType="Collection(Anviz_Data_BaseModel.GetEmployes_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="begindate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Anviz_Data_BaseModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Anviz_Data_BaseModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_matrix_weekdays" ReturnType="Collection(Anviz_Data_BaseModel.sp_matrix_weekdays_Result)">
+      <Parameter Name="idDepto" Mode="In" Type="Int32" />
+      <Parameter Name="begindate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="AddTimeSet">
+    <Key>
+      <PropertyRef Name="Userid" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="TimeID" />
+    </Key>
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TimeID" Type="Int32" Nullable="false" />
+    <Property Name="AddTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BasePara">
+    <Key>
+      <PropertyRef Name="Company" />
+    </Key>
+    <Property Name="Company" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TwoDay" Type="Int16" Nullable="false" />
+    <Property Name="NoClockIn" Type="Boolean" Nullable="false" />
+    <Property Name="NoClockOut" Type="Boolean" Nullable="false" />
+    <Property Name="LateTime" Type="Int16" Nullable="false" />
+    <Property Name="LeaveTime" Type="Int16" Nullable="false" />
+    <Property Name="ISOverTime" Type="Boolean" Nullable="false" />
+    <Property Name="OverTime" Type="Int16" Nullable="false" />
+    <Property Name="WorkDayLong" Type="Int16" Nullable="false" />
+    <Property Name="WOverTime" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="HOverTime" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="FOverTime" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="IsAutoDownRec" Type="Boolean" />
+    <Property Name="DownRecTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OvertimeIn" Type="Int16" />
+    <Property Name="IsovertimeIn" Type="Boolean" />
+    <Property Name="DeductIn" Type="Boolean" />
+    <Property Name="DeductOut" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Checkinout">
+    <Key>
+      <PropertyRef Name="Logid" />
+    </Key>
+    <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CheckTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CheckType" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Checked" Type="Boolean" />
+    <Property Name="WorkType" Type="Int32" />
+    <Property Name="AttFlag" Type="Int32" />
+    <Property Name="OpenDoorFlag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CheckLog">
+    <Key>
+      <PropertyRef Name="Logid" />
+    </Key>
+    <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Checktime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Checktype" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="OPFlag" Type="Int16" />
+    <Property Name="Whys" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="OPname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ClientSet">
+    <Key>
+      <PropertyRef Name="Clientid" />
+    </Key>
+    <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Pwd" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="DTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="DefineField">
+    <Key>
+      <PropertyRef Name="Fieldid" />
+    </Key>
+    <Property Name="Fieldid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FieldName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="FieldValue" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Dept">
+    <Key>
+      <PropertyRef Name="Deptid" />
+    </Key>
+    <Property Name="Deptid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DeptName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SupDeptid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FingerClient">
+    <Key>
+      <PropertyRef Name="Clientid" />
+    </Key>
+    <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Linkmode" Type="Int16" />
+    <Property Name="IPaddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ClientName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ClientNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Baudrate" Type="Int32" />
+    <Property Name="RecStatus" Type="Int32" />
+    <Property Name="Floorid" Type="Int32" />
+    <Property Name="MachineType" Type="Int32" />
+    <Property Name="DeviceType" Type="Int32" />
+    <Property Name="CommPWD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CommPort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Holiday">
+    <Key>
+      <PropertyRef Name="Holidayid" />
+    </Key>
+    <Property Name="Holidayid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Days" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeaveClass">
+    <Key>
+      <PropertyRef Name="Classid" />
+    </Key>
+    <Property Name="Classid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Classname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ViewColor" Type="Int32" Nullable="false" />
+    <Property Name="Showas" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MemStat">
+    <Key>
+      <PropertyRef Name="Lsh" />
+    </Key>
+    <Property Name="Lsh" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Udept" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Uname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Normal" Type="Single" Nullable="false" />
+    <Property Name="Actual" Type="Single" Nullable="false" />
+    <Property Name="Latetime" Type="Single" Nullable="false" />
+    <Property Name="Earlytime" Type="Single" Nullable="false" />
+    <Property Name="Absenttime" Type="Single" Nullable="false" />
+    <Property Name="Overtime" Type="Single" Nullable="false" />
+    <Property Name="Noin" Type="Int32" Nullable="false" />
+    <Property Name="Noout" Type="Int32" Nullable="false" />
+    <Property Name="Awaytime" Type="Single" Nullable="false" />
+    <Property Name="BLeave" Type="Single" Nullable="false" />
+    <Property Name="Leave" Type="Single" Nullable="false" />
+    <Property Name="Freeovertime" Type="Single" Nullable="false" />
+    <Property Name="Worktime" Type="Single" Nullable="false" />
+    <Property Name="Attrate" Type="Single" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OPinfo">
+    <Key>
+      <PropertyRef Name="Opid" />
+    </Key>
+    <Property Name="Opid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Authority" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="Deptpower" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="OPLog">
+    <Key>
+      <PropertyRef Name="Logid" />
+    </Key>
+    <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OPid" Type="Int32" Nullable="false" />
+    <Property Name="Optime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OPlog1" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="OutProg">
+    <Key>
+      <PropertyRef Name="Progid" />
+    </Key>
+    <Property Name="Progid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ProgPath" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="Schid" />
+    </Key>
+    <Property Name="Schid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Schname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Cycles" Type="Int16" Nullable="false" />
+    <Property Name="Units" Type="Int16" Nullable="false" />
+    <Property Name="AutoClass" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SchTime">
+    <Key>
+      <PropertyRef Name="Schid" />
+      <PropertyRef Name="BeginDay" />
+      <PropertyRef Name="Timeid" />
+    </Key>
+    <Property Name="Schid" Type="Int32" Nullable="false" />
+    <Property Name="BeginDay" Type="Int16" Nullable="false" />
+    <Property Name="Timeid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatItem">
+    <Key>
+      <PropertyRef Name="Itemid" />
+    </Key>
+    <Property Name="Itemid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Units" Type="Int16" Nullable="false" />
+    <Property Name="MinUnit" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+    <Property Name="SRControl" Type="Int16" Nullable="false" />
+    <Property Name="IsAddup" Type="Boolean" Nullable="false" />
+    <Property Name="IsTimes" Type="Boolean" Nullable="false" />
+    <Property Name="Showas" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Statusid" />
+    </Key>
+    <Property Name="Statusid" Type="Int32" Nullable="false" />
+    <Property Name="StatusChar" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="StatusText" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_Checkinout">
+    <Key>
+      <PropertyRef Name="Logid" />
+    </Key>
+    <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CheckTime" Type="DateTime" Precision="3" />
+    <Property Name="CheckType" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Checked" Type="Boolean" Nullable="false" />
+    <Property Name="WorkType" Type="Int32" Nullable="false" />
+    <Property Name="AttFlag" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_UpdateClient">
+    <Key>
+      <PropertyRef Name="Clientid" />
+    </Key>
+    <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TimeTable">
+    <Key>
+      <PropertyRef Name="Timeid" />
+    </Key>
+    <Property Name="Timeid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Timename" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Intime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="Outtime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="BIntime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="EIntime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="BOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="EOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="Latetime" Type="Int16" Nullable="false" />
+    <Property Name="Leavetime" Type="Int16" Nullable="false" />
+    <Property Name="WorkDays" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+    <Property Name="Longtime" Type="Int16" Nullable="false" />
+    <Property Name="MustIn" Type="Boolean" />
+    <Property Name="MustOut" Type="Boolean" />
+    <Property Name="IsFreeTime" Type="Boolean" />
+    <Property Name="IsOverTime" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="UserCtrLog">
+    <Key>
+      <PropertyRef Name="Logid" />
+    </Key>
+    <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Clientid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Userid" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CheckTime" Type="DateTime" Precision="3" />
+    <Property Name="ULog" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Userinfo">
+    <Key>
+      <PropertyRef Name="Userid" />
+    </Key>
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Sex" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Deptid" Type="Int32" Nullable="false" />
+    <Property Name="Nation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Brithday" Type="DateTime" Precision="0" />
+    <Property Name="EmployDate" Type="DateTime" Precision="0" />
+    <Property Name="Telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Duty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="NativePlace" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IDCard" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Educated" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Polity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Specialty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsAtt" Type="Boolean" />
+    <Property Name="Isovertime" Type="Boolean" />
+    <Property Name="Isrest" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="MgFlag" Type="Int16" />
+    <Property Name="CardNum" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UserFlag" Type="Int32" />
+    <Property Name="Groupid" Type="Int32" />
+    <Property Name="workdaylong" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Userinfo_BK">
+    <Key>
+      <PropertyRef Name="Userid" />
+      <PropertyRef Name="Deptid" />
+    </Key>
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Sex" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Deptid" Type="Int32" Nullable="false" />
+    <Property Name="Nation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Brithday" Type="DateTime" Precision="0" />
+    <Property Name="EmployDate" Type="DateTime" Precision="0" />
+    <Property Name="Telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Duty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="NativePlace" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IDCard" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Educated" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Polity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Specialty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsAtt" Type="Boolean" />
+    <Property Name="Isovertime" Type="Boolean" />
+    <Property Name="Isrest" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="MgFlag" Type="Int16" />
+    <Property Name="CardNum" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UserFlag" Type="Int32" />
+    <Property Name="Groupid" Type="Int32" />
+    <Property Name="workdaylong" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserinfoBackup">
+    <Key>
+      <PropertyRef Name="IsAtt" />
+      <PropertyRef Name="Isovertime" />
+      <PropertyRef Name="Isrest" />
+    </Key>
+    <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Sex" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Pwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Deptid" Type="Int32" />
+    <Property Name="Nation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Brithday" Type="DateTime" Precision="3" />
+    <Property Name="EmployDate" Type="DateTime" Precision="3" />
+    <Property Name="Telephone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Duty" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NativePlace" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IDCard" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Educated" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Polity" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Specialty" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IsAtt" Type="Boolean" Nullable="false" />
+    <Property Name="Isovertime" Type="Boolean" Nullable="false" />
+    <Property Name="Isrest" Type="Boolean" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="MgFlag" Type="Int16" />
+    <Property Name="Cardnum" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Machineid" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UserFlag" Type="Int32" />
+    <Property Name="Groupid" Type="Int32" />
+    <Property Name="workdaylong" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserLeave">
+    <Key>
+      <PropertyRef Name="Lsh" />
+    </Key>
+    <Property Name="Lsh" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LeaveClassid" Type="Int32" Nullable="false" />
+    <Property Name="Whys" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserPower">
+    <Key>
+      <PropertyRef Name="Logid" />
+    </Key>
+    <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ClientNumber" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PowerFlag" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserShift">
+    <Key>
+      <PropertyRef Name="Userid" />
+      <PropertyRef Name="Schid" />
+      <PropertyRef Name="BeginDate" />
+      <PropertyRef Name="EndDate" />
+    </Key>
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Schid" Type="Int32" Nullable="false" />
+    <Property Name="BeginDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EndDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserTempShift">
+    <Key>
+      <PropertyRef Name="Userid" />
+      <PropertyRef Name="Timeid" />
+      <PropertyRef Name="WorkDate" />
+    </Key>
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Timeid" Type="Int32" Nullable="false" />
+    <Property Name="WorkDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="IsOvertime" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_Class">
+    <Key>
+      <PropertyRef Name="Schid" />
+      <PropertyRef Name="Schname" />
+      <PropertyRef Name="Cycles" />
+      <PropertyRef Name="Units" />
+      <PropertyRef Name="BeginDay" />
+      <PropertyRef Name="Timeid" />
+      <PropertyRef Name="Timename" />
+      <PropertyRef Name="Intime" />
+      <PropertyRef Name="Outtime" />
+      <PropertyRef Name="BIntime" />
+      <PropertyRef Name="EIntime" />
+      <PropertyRef Name="BOuttime" />
+      <PropertyRef Name="EOuttime" />
+      <PropertyRef Name="Latetime" />
+      <PropertyRef Name="Leavetime" />
+      <PropertyRef Name="WorkDays" />
+      <PropertyRef Name="Longtime" />
+    </Key>
+    <Property Name="Schid" Type="Int32" Nullable="false" />
+    <Property Name="Schname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Cycles" Type="Int16" Nullable="false" />
+    <Property Name="Units" Type="Int16" Nullable="false" />
+    <Property Name="AutoClass" Type="Boolean" />
+    <Property Name="BeginDay" Type="Int16" Nullable="false" />
+    <Property Name="Timeid" Type="Int32" Nullable="false" />
+    <Property Name="Timename" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Intime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="Outtime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="BIntime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="EIntime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="BOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="EOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="Latetime" Type="Int16" Nullable="false" />
+    <Property Name="Leavetime" Type="Int16" Nullable="false" />
+    <Property Name="WorkDays" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+    <Property Name="Longtime" Type="Int16" Nullable="false" />
+    <Property Name="MustIn" Type="Boolean" />
+    <Property Name="MustOut" Type="Boolean" />
+    <Property Name="IsFreetime" Type="Boolean" />
+    <Property Name="IsOvertime" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="V_UserClient">
+    <Key>
+      <PropertyRef Name="Logid" />
+      <PropertyRef Name="Userid" />
+      <PropertyRef Name="ClientNumber" />
+      <PropertyRef Name="PowerFlag" />
+      <PropertyRef Name="Deptid" />
+    </Key>
+    <Property Name="Logid" Type="Int32" Nullable="false" />
+    <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ClientNumber" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PowerFlag" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CardNum" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Deptid" Type="Int32" Nullable="false" />
+    <Property Name="UserFlag" Type="Int32" />
+    <Property Name="MgFlag" Type="Int16" />
+    <Property Name="Groupid" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="GetEmployes_Result">
+    <Property Type="String" Name="userid" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Lunes" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Lunes" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Monday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Martes" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Martes" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Tuesday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Miercoles" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Miercoles" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Wednsday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Jueves" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Jueves" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Thursday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Viernes" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Viernes" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Friday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Sabado" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Sabado" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Saturday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Domingo" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Domingo" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Sunday" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_matrix_weekdays_Result">
+    <Property Type="String" Name="userid" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Lunes" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Lunes" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Monday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Martes" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Martes" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Tuesday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Miercoles" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Miercoles" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Wednsday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Jueves" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Jueves" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Thursday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Viernes" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Viernes" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Friday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Sabado" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Sabado" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Saturday" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Hora_de_LLegada_Domingo" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Hora_de_salida_Domingo" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Sunday" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+</Schema>

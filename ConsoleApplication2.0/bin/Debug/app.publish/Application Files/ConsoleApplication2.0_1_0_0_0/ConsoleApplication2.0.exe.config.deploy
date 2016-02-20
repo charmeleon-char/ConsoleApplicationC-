@@ -9,8 +9,6 @@
   </startup>
   <connectionStrings>
     <add name="Anviz_Data_BaseEntities" connectionString="metadata=res://*/AnvizDb.csdl|res://*/AnvizDb.ssdl|res://*/AnvizDb.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=localhost;initial catalog=Anviz_Data_Base;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
-    <add name="Anviz_Data_BaseEntities1" connectionString="metadata=res://*/Amviz2.csdl|res://*/Amviz2.ssdl|res://*/Amviz2.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=HNLAUDEVDC1.hnsc\SQLEXPRESS;initial catalog=Anviz_Data_Base;user id=elpro;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
-    <add name="Anviz_Data_BaseEntities2" connectionString="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=HNLAUDEVDC1.hnsc\SQLEXPRESS;initial catalog=Anviz_Data_Base;user id=elpro;password=Laureate123;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
   </connectionStrings>
   <entityFramework>
     <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">

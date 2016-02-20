@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Anviz_Data_BaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="Anviz_Data_BaseModelStoreContainer">
-          <EntitySet Name="AddTimeSet" EntityType="Anviz_Data_BaseModel.Store.AddTimeSet" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BasePara" EntityType="Anviz_Data_BaseModel.Store.BasePara" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Checkinout" EntityType="Anviz_Data_BaseModel.Store.Checkinout" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CheckLog" EntityType="Anviz_Data_BaseModel.Store.CheckLog" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ClientSet" EntityType="Anviz_Data_BaseModel.Store.ClientSet" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DefineField" EntityType="Anviz_Data_BaseModel.Store.DefineField" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Dept" EntityType="Anviz_Data_BaseModel.Store.Dept" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FingerClient" EntityType="Anviz_Data_BaseModel.Store.FingerClient" store:Type="Tables" store:Schema="dbo" store:Name="FingerClient">
+      <Schema Namespace="Anviz_Data_BaseModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Anviz_Data_BaseModel1StoreContainer">
+          <EntitySet Name="AddTimeSet" EntityType="Anviz_Data_BaseModel1.Store.AddTimeSet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BasePara" EntityType="Anviz_Data_BaseModel1.Store.BasePara" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Checkinout" EntityType="Anviz_Data_BaseModel1.Store.Checkinout" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CheckLog" EntityType="Anviz_Data_BaseModel1.Store.CheckLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClientSet" EntityType="Anviz_Data_BaseModel1.Store.ClientSet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DefineField" EntityType="Anviz_Data_BaseModel1.Store.DefineField" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Dept" EntityType="Anviz_Data_BaseModel1.Store.Dept" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FingerClient" EntityType="Anviz_Data_BaseModel1.Store.FingerClient" store:Type="Tables" store:Schema="dbo" store:Name="FingerClient">
             <DefiningQuery>SELECT 
       [FingerClient].[Clientid] AS [Clientid], 
       [FingerClient].[Linkmode] AS [Linkmode], 
@@ -29,23 +29,23 @@
       [FingerClient].[CommPort] AS [CommPort]
       FROM [dbo].[FingerClient] AS [FingerClient]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="Holiday" EntityType="Anviz_Data_BaseModel.Store.Holiday" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LeaveClass" EntityType="Anviz_Data_BaseModel.Store.LeaveClass" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MemStat" EntityType="Anviz_Data_BaseModel.Store.MemStat" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OPinfo" EntityType="Anviz_Data_BaseModel.Store.OPinfo" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OPLog" EntityType="Anviz_Data_BaseModel.Store.OPLog" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OutProg" EntityType="Anviz_Data_BaseModel.Store.OutProg" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Schedule" EntityType="Anviz_Data_BaseModel.Store.Schedule" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SchTime" EntityType="Anviz_Data_BaseModel.Store.SchTime" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="StatItems" EntityType="Anviz_Data_BaseModel.Store.StatItems" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Status" EntityType="Anviz_Data_BaseModel.Store.Status" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="Anviz_Data_BaseModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="T_Checkinout" EntityType="Anviz_Data_BaseModel.Store.T_Checkinout" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="T_UpdateClient" EntityType="Anviz_Data_BaseModel.Store.T_UpdateClient" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TimeTable" EntityType="Anviz_Data_BaseModel.Store.TimeTable" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserCtrLog" EntityType="Anviz_Data_BaseModel.Store.UserCtrLog" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Userinfo" EntityType="Anviz_Data_BaseModel.Store.Userinfo" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Userinfo_BK" EntityType="Anviz_Data_BaseModel.Store.Userinfo_BK" store:Type="Tables" store:Schema="dbo" store:Name="Userinfo_BK">
+          <EntitySet Name="Holiday" EntityType="Anviz_Data_BaseModel1.Store.Holiday" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LeaveClass" EntityType="Anviz_Data_BaseModel1.Store.LeaveClass" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MemStat" EntityType="Anviz_Data_BaseModel1.Store.MemStat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OPinfo" EntityType="Anviz_Data_BaseModel1.Store.OPinfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OPLog" EntityType="Anviz_Data_BaseModel1.Store.OPLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OutProg" EntityType="Anviz_Data_BaseModel1.Store.OutProg" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Schedule" EntityType="Anviz_Data_BaseModel1.Store.Schedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SchTime" EntityType="Anviz_Data_BaseModel1.Store.SchTime" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StatItems" EntityType="Anviz_Data_BaseModel1.Store.StatItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Status" EntityType="Anviz_Data_BaseModel1.Store.Status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="Anviz_Data_BaseModel1.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Checkinout" EntityType="Anviz_Data_BaseModel1.Store.T_Checkinout" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_UpdateClient" EntityType="Anviz_Data_BaseModel1.Store.T_UpdateClient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TimeTable" EntityType="Anviz_Data_BaseModel1.Store.TimeTable" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserCtrLog" EntityType="Anviz_Data_BaseModel1.Store.UserCtrLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Userinfo" EntityType="Anviz_Data_BaseModel1.Store.Userinfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Userinfo_BK" EntityType="Anviz_Data_BaseModel1.Store.Userinfo_BK" store:Type="Tables" store:Schema="dbo" store:Name="Userinfo_BK">
             <DefiningQuery>SELECT 
       [Userinfo_BK].[Userid] AS [Userid], 
       [Userinfo_BK].[Name] AS [Name], 
@@ -76,7 +76,7 @@
       [Userinfo_BK].[workdaylong] AS [workdaylong]
       FROM [dbo].[Userinfo_BK] AS [Userinfo_BK]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="UserinfoBackup" EntityType="Anviz_Data_BaseModel.Store.UserinfoBackup" store:Type="Tables" store:Schema="dbo" store:Name="UserinfoBackup">
+          <EntitySet Name="UserinfoBackup" EntityType="Anviz_Data_BaseModel1.Store.UserinfoBackup" store:Type="Tables" store:Schema="dbo" store:Name="UserinfoBackup">
             <DefiningQuery>SELECT 
       [UserinfoBackup].[Userid] AS [Userid], 
       [UserinfoBackup].[Name] AS [Name], 
@@ -108,11 +108,11 @@
       [UserinfoBackup].[workdaylong] AS [workdaylong]
       FROM [dbo].[UserinfoBackup] AS [UserinfoBackup]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="UserLeave" EntityType="Anviz_Data_BaseModel.Store.UserLeave" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserPower" EntityType="Anviz_Data_BaseModel.Store.UserPower" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserShift" EntityType="Anviz_Data_BaseModel.Store.UserShift" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserTempShift" EntityType="Anviz_Data_BaseModel.Store.UserTempShift" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="V_Class" EntityType="Anviz_Data_BaseModel.Store.V_Class" store:Type="Views" store:Schema="dbo" store:Name="V_Class">
+          <EntitySet Name="UserLeave" EntityType="Anviz_Data_BaseModel1.Store.UserLeave" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserPower" EntityType="Anviz_Data_BaseModel1.Store.UserPower" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserShift" EntityType="Anviz_Data_BaseModel1.Store.UserShift" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserTempShift" EntityType="Anviz_Data_BaseModel1.Store.UserTempShift" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="V_Class" EntityType="Anviz_Data_BaseModel1.Store.V_Class" store:Type="Views" store:Schema="dbo" store:Name="V_Class">
             <DefiningQuery>SELECT 
       [V_Class].[Schid] AS [Schid], 
       [V_Class].[Schname] AS [Schname], 
@@ -138,7 +138,7 @@
       [V_Class].[IsOvertime] AS [IsOvertime]
       FROM [dbo].[V_Class] AS [V_Class]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="V_UserClient" EntityType="Anviz_Data_BaseModel.Store.V_UserClient" store:Type="Views" store:Schema="dbo" store:Name="V_UserClient">
+          <EntitySet Name="V_UserClient" EntityType="Anviz_Data_BaseModel1.Store.V_UserClient" store:Type="Views" store:Schema="dbo" store:Name="V_UserClient">
             <DefiningQuery>SELECT 
       [V_UserClient].[Logid] AS [Logid], 
       [V_UserClient].[Userid] AS [Userid], 
@@ -706,41 +706,41 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Anviz_Data_BaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Anviz_Data_BaseEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="AddTimeSets" EntityType="Anviz_Data_BaseModel.AddTimeSet" />
-          <EntitySet Name="BaseParas" EntityType="Anviz_Data_BaseModel.BasePara" />
-          <EntitySet Name="Checkinouts" EntityType="Anviz_Data_BaseModel.Checkinout" />
-          <EntitySet Name="CheckLogs" EntityType="Anviz_Data_BaseModel.CheckLog" />
-          <EntitySet Name="ClientSets" EntityType="Anviz_Data_BaseModel.ClientSet" />
-          <EntitySet Name="DefineFields" EntityType="Anviz_Data_BaseModel.DefineField" />
-          <EntitySet Name="Depts" EntityType="Anviz_Data_BaseModel.Dept" />
-          <EntitySet Name="FingerClients" EntityType="Anviz_Data_BaseModel.FingerClient" />
-          <EntitySet Name="Holidays" EntityType="Anviz_Data_BaseModel.Holiday" />
-          <EntitySet Name="LeaveClasses" EntityType="Anviz_Data_BaseModel.LeaveClass" />
-          <EntitySet Name="MemStats" EntityType="Anviz_Data_BaseModel.MemStat" />
-          <EntitySet Name="OPinfoes" EntityType="Anviz_Data_BaseModel.OPinfo" />
-          <EntitySet Name="OPLogs" EntityType="Anviz_Data_BaseModel.OPLog" />
-          <EntitySet Name="OutProgs" EntityType="Anviz_Data_BaseModel.OutProg" />
-          <EntitySet Name="Schedules" EntityType="Anviz_Data_BaseModel.Schedule" />
-          <EntitySet Name="SchTimes" EntityType="Anviz_Data_BaseModel.SchTime" />
-          <EntitySet Name="StatItems" EntityType="Anviz_Data_BaseModel.StatItem" />
-          <EntitySet Name="Status" EntityType="Anviz_Data_BaseModel.Status" />
-          <EntitySet Name="sysdiagrams" EntityType="Anviz_Data_BaseModel.sysdiagram" />
-          <EntitySet Name="T_Checkinout" EntityType="Anviz_Data_BaseModel.T_Checkinout" />
-          <EntitySet Name="T_UpdateClient" EntityType="Anviz_Data_BaseModel.T_UpdateClient" />
-          <EntitySet Name="TimeTables" EntityType="Anviz_Data_BaseModel.TimeTable" />
-          <EntitySet Name="UserCtrLogs" EntityType="Anviz_Data_BaseModel.UserCtrLog" />
-          <EntitySet Name="Userinfoes" EntityType="Anviz_Data_BaseModel.Userinfo" />
-          <EntitySet Name="Userinfo_BK" EntityType="Anviz_Data_BaseModel.Userinfo_BK" />
-          <EntitySet Name="UserinfoBackups" EntityType="Anviz_Data_BaseModel.UserinfoBackup" />
-          <EntitySet Name="UserLeaves" EntityType="Anviz_Data_BaseModel.UserLeave" />
-          <EntitySet Name="UserPowers" EntityType="Anviz_Data_BaseModel.UserPower" />
-          <EntitySet Name="UserShifts" EntityType="Anviz_Data_BaseModel.UserShift" />
-          <EntitySet Name="UserTempShifts" EntityType="Anviz_Data_BaseModel.UserTempShift" />
-          <EntitySet Name="V_Class" EntityType="Anviz_Data_BaseModel.V_Class" />
-          <EntitySet Name="V_UserClient" EntityType="Anviz_Data_BaseModel.V_UserClient" />
-          <FunctionImport Name="GetEmployes" ReturnType="Collection(Anviz_Data_BaseModel.GetEmployes_Result)">
+      <Schema Namespace="Anviz_Data_BaseModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Anviz_Data_BaseEntities2" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AddTimeSets" EntityType="Anviz_Data_BaseModel1.AddTimeSet" />
+          <EntitySet Name="BaseParas" EntityType="Anviz_Data_BaseModel1.BasePara" />
+          <EntitySet Name="Checkinouts" EntityType="Anviz_Data_BaseModel1.Checkinout" />
+          <EntitySet Name="CheckLogs" EntityType="Anviz_Data_BaseModel1.CheckLog" />
+          <EntitySet Name="ClientSets" EntityType="Anviz_Data_BaseModel1.ClientSet" />
+          <EntitySet Name="DefineFields" EntityType="Anviz_Data_BaseModel1.DefineField" />
+          <EntitySet Name="Depts" EntityType="Anviz_Data_BaseModel1.Dept" />
+          <EntitySet Name="FingerClients" EntityType="Anviz_Data_BaseModel1.FingerClient" />
+          <EntitySet Name="Holidays" EntityType="Anviz_Data_BaseModel1.Holiday" />
+          <EntitySet Name="LeaveClasses" EntityType="Anviz_Data_BaseModel1.LeaveClass" />
+          <EntitySet Name="MemStats" EntityType="Anviz_Data_BaseModel1.MemStat" />
+          <EntitySet Name="OPinfoes" EntityType="Anviz_Data_BaseModel1.OPinfo" />
+          <EntitySet Name="OPLogs" EntityType="Anviz_Data_BaseModel1.OPLog" />
+          <EntitySet Name="OutProgs" EntityType="Anviz_Data_BaseModel1.OutProg" />
+          <EntitySet Name="Schedules" EntityType="Anviz_Data_BaseModel1.Schedule" />
+          <EntitySet Name="SchTimes" EntityType="Anviz_Data_BaseModel1.SchTime" />
+          <EntitySet Name="StatItems" EntityType="Anviz_Data_BaseModel1.StatItem" />
+          <EntitySet Name="Status" EntityType="Anviz_Data_BaseModel1.Status" />
+          <EntitySet Name="sysdiagrams" EntityType="Anviz_Data_BaseModel1.sysdiagram" />
+          <EntitySet Name="T_Checkinout" EntityType="Anviz_Data_BaseModel1.T_Checkinout" />
+          <EntitySet Name="T_UpdateClient" EntityType="Anviz_Data_BaseModel1.T_UpdateClient" />
+          <EntitySet Name="TimeTables" EntityType="Anviz_Data_BaseModel1.TimeTable" />
+          <EntitySet Name="UserCtrLogs" EntityType="Anviz_Data_BaseModel1.UserCtrLog" />
+          <EntitySet Name="Userinfoes" EntityType="Anviz_Data_BaseModel1.Userinfo" />
+          <EntitySet Name="Userinfo_BK" EntityType="Anviz_Data_BaseModel1.Userinfo_BK" />
+          <EntitySet Name="UserinfoBackups" EntityType="Anviz_Data_BaseModel1.UserinfoBackup" />
+          <EntitySet Name="UserLeaves" EntityType="Anviz_Data_BaseModel1.UserLeave" />
+          <EntitySet Name="UserPowers" EntityType="Anviz_Data_BaseModel1.UserPower" />
+          <EntitySet Name="UserShifts" EntityType="Anviz_Data_BaseModel1.UserShift" />
+          <EntitySet Name="UserTempShifts" EntityType="Anviz_Data_BaseModel1.UserTempShift" />
+          <EntitySet Name="V_Class" EntityType="Anviz_Data_BaseModel1.V_Class" />
+          <EntitySet Name="V_UserClient" EntityType="Anviz_Data_BaseModel1.V_UserClient" />
+          <FunctionImport Name="GetEmployes" ReturnType="Collection(Anviz_Data_BaseModel1.GetEmployes_Result)">
             <Parameter Name="userid" Mode="In" Type="Int32" />
             <Parameter Name="begindate" Mode="In" Type="String" />
           </FunctionImport>
@@ -760,15 +760,15 @@
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition">
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Anviz_Data_BaseModel1.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams">
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Anviz_Data_BaseModel1.sp_helpdiagrams_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_matrix_weekdays" ReturnType="Collection(Anviz_Data_BaseModel.sp_matrix_weekdays_Result)">
+          <FunctionImport Name="sp_matrix_weekdays" ReturnType="Collection(Anviz_Data_BaseModel1.sp_matrix_weekdays_Result)">
             <Parameter Name="idDepto" Mode="In" Type="Int32" />
             <Parameter Name="begindate" Mode="In" Type="String" />
           </FunctionImport>
@@ -1282,6 +1282,17 @@
           <Property Type="DateTime" Name="Hora_de_salida_Domingo" Nullable="true" Precision="23" />
           <Property Type="Decimal" Name="Sunday" Nullable="true" Precision="18" Scale="2" />
         </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
         <ComplexType Name="sp_matrix_weekdays_Result">
           <Property Type="String" Name="userid" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
@@ -1312,9 +1323,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Anviz_Data_BaseModelStoreContainer" CdmEntityContainer="Anviz_Data_BaseEntities">
+        <EntityContainerMapping StorageEntityContainer="Anviz_Data_BaseModel1StoreContainer" CdmEntityContainer="Anviz_Data_BaseEntities2">
           <EntitySetMapping Name="AddTimeSets">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.AddTimeSet">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.AddTimeSet">
               <MappingFragment StoreEntitySet="AddTimeSet">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -1324,7 +1335,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BaseParas">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.BasePara">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.BasePara">
               <MappingFragment StoreEntitySet="BasePara">
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="TwoDay" ColumnName="TwoDay" />
@@ -1348,7 +1359,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Checkinouts">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Checkinout">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Checkinout">
               <MappingFragment StoreEntitySet="Checkinout">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1363,7 +1374,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CheckLogs">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.CheckLog">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.CheckLog">
               <MappingFragment StoreEntitySet="CheckLog">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1378,7 +1389,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ClientSets">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.ClientSet">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.ClientSet">
               <MappingFragment StoreEntitySet="ClientSet">
                 <ScalarProperty Name="Clientid" ColumnName="Clientid" />
                 <ScalarProperty Name="Pwd" ColumnName="Pwd" />
@@ -1387,7 +1398,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DefineFields">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.DefineField">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.DefineField">
               <MappingFragment StoreEntitySet="DefineField">
                 <ScalarProperty Name="Fieldid" ColumnName="Fieldid" />
                 <ScalarProperty Name="FieldName" ColumnName="FieldName" />
@@ -1396,7 +1407,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Depts">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Dept">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Dept">
               <MappingFragment StoreEntitySet="Dept">
                 <ScalarProperty Name="Deptid" ColumnName="Deptid" />
                 <ScalarProperty Name="DeptName" ColumnName="DeptName" />
@@ -1405,7 +1416,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FingerClients">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.FingerClient">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.FingerClient">
               <MappingFragment StoreEntitySet="FingerClient">
                 <ScalarProperty Name="Clientid" ColumnName="Clientid" />
                 <ScalarProperty Name="Linkmode" ColumnName="Linkmode" />
@@ -1423,7 +1434,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Holidays">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Holiday">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Holiday">
               <MappingFragment StoreEntitySet="Holiday">
                 <ScalarProperty Name="Holidayid" ColumnName="Holidayid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1433,7 +1444,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LeaveClasses">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.LeaveClass">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.LeaveClass">
               <MappingFragment StoreEntitySet="LeaveClass">
                 <ScalarProperty Name="Classid" ColumnName="Classid" />
                 <ScalarProperty Name="Classname" ColumnName="Classname" />
@@ -1443,7 +1454,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MemStats">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.MemStat">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.MemStat">
               <MappingFragment StoreEntitySet="MemStat">
                 <ScalarProperty Name="Lsh" ColumnName="Lsh" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1467,7 +1478,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OPinfoes">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OPinfo">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.OPinfo">
               <MappingFragment StoreEntitySet="OPinfo">
                 <ScalarProperty Name="Opid" ColumnName="Opid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1478,7 +1489,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OPLogs">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OPLog">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.OPLog">
               <MappingFragment StoreEntitySet="OPLog">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="OPid" ColumnName="OPid" />
@@ -1488,7 +1499,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OutProgs">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OutProg">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.OutProg">
               <MappingFragment StoreEntitySet="OutProg">
                 <ScalarProperty Name="Progid" ColumnName="Progid" />
                 <ScalarProperty Name="ProgName" ColumnName="ProgName" />
@@ -1497,7 +1508,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Schedules">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Schedule">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Schedule">
               <MappingFragment StoreEntitySet="Schedule">
                 <ScalarProperty Name="Schid" ColumnName="Schid" />
                 <ScalarProperty Name="Schname" ColumnName="Schname" />
@@ -1508,7 +1519,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SchTimes">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.SchTime">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.SchTime">
               <MappingFragment StoreEntitySet="SchTime">
                 <ScalarProperty Name="Schid" ColumnName="Schid" />
                 <ScalarProperty Name="BeginDay" ColumnName="BeginDay" />
@@ -1517,7 +1528,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StatItems">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.StatItem">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.StatItem">
               <MappingFragment StoreEntitySet="StatItems">
                 <ScalarProperty Name="Itemid" ColumnName="Itemid" />
                 <ScalarProperty Name="ItemName" ColumnName="ItemName" />
@@ -1531,7 +1542,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Status">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Status">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Status">
               <MappingFragment StoreEntitySet="Status">
                 <ScalarProperty Name="Statusid" ColumnName="Statusid" />
                 <ScalarProperty Name="StatusChar" ColumnName="StatusChar" />
@@ -1540,7 +1551,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.sysdiagram">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1551,7 +1562,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="T_Checkinout">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.T_Checkinout">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.T_Checkinout">
               <MappingFragment StoreEntitySet="T_Checkinout">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1565,14 +1576,14 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="T_UpdateClient">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.T_UpdateClient">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.T_UpdateClient">
               <MappingFragment StoreEntitySet="T_UpdateClient">
                 <ScalarProperty Name="Clientid" ColumnName="Clientid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TimeTables">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.TimeTable">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.TimeTable">
               <MappingFragment StoreEntitySet="TimeTable">
                 <ScalarProperty Name="Timeid" ColumnName="Timeid" />
                 <ScalarProperty Name="Timename" ColumnName="Timename" />
@@ -1594,7 +1605,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserCtrLogs">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserCtrLog">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserCtrLog">
               <MappingFragment StoreEntitySet="UserCtrLog">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Clientid" ColumnName="Clientid" />
@@ -1605,7 +1616,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Userinfoes">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Userinfo">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Userinfo">
               <MappingFragment StoreEntitySet="Userinfo">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1638,7 +1649,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Userinfo_BK">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Userinfo_BK">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Userinfo_BK">
               <MappingFragment StoreEntitySet="Userinfo_BK">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1671,7 +1682,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserinfoBackups">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserinfoBackup">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserinfoBackup">
               <MappingFragment StoreEntitySet="UserinfoBackup">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1705,7 +1716,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserLeaves">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserLeave">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserLeave">
               <MappingFragment StoreEntitySet="UserLeave">
                 <ScalarProperty Name="Lsh" ColumnName="Lsh" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1717,7 +1728,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserPowers">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserPower">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserPower">
               <MappingFragment StoreEntitySet="UserPower">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1727,7 +1738,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserShifts">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserShift">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserShift">
               <MappingFragment StoreEntitySet="UserShift">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Schid" ColumnName="Schid" />
@@ -1737,7 +1748,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserTempShifts">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserTempShift">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserTempShift">
               <MappingFragment StoreEntitySet="UserTempShift">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Timeid" ColumnName="Timeid" />
@@ -1747,7 +1758,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="V_Class">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.V_Class">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.V_Class">
               <MappingFragment StoreEntitySet="V_Class">
                 <ScalarProperty Name="Schid" ColumnName="Schid" />
                 <ScalarProperty Name="Schname" ColumnName="Schname" />
@@ -1775,7 +1786,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="V_UserClient">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.V_UserClient">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.V_UserClient">
               <MappingFragment StoreEntitySet="V_UserClient">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1791,9 +1802,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="GetEmployes" FunctionName="Anviz_Data_BaseModel.Store.GetEmployes">
+          <FunctionImportMapping FunctionImportName="GetEmployes" FunctionName="Anviz_Data_BaseModel1.Store.GetEmployes">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel.GetEmployes_Result">
+              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel1.GetEmployes_Result">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="Hora_de_LLegada_Lunes" ColumnName="Hora de LLegada Lunes" />
@@ -1820,14 +1831,31 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Anviz_Data_BaseModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Anviz_Data_BaseModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Anviz_Data_BaseModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Anviz_Data_BaseModel.Store.sp_helpdiagramdefinition" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Anviz_Data_BaseModel.Store.sp_helpdiagrams" />
-          <FunctionImportMapping FunctionImportName="sp_matrix_weekdays" FunctionName="Anviz_Data_BaseModel.Store.sp_matrix_weekdays">
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Anviz_Data_BaseModel1.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Anviz_Data_BaseModel1.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Anviz_Data_BaseModel1.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Anviz_Data_BaseModel1.Store.sp_helpdiagramdefinition">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel.sp_matrix_weekdays_Result">
+              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel1.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Anviz_Data_BaseModel1.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel1.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_matrix_weekdays" FunctionName="Anviz_Data_BaseModel1.Store.sp_matrix_weekdays">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel1.sp_matrix_weekdays_Result">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="Hora_de_LLegada_Lunes" ColumnName="Hora de LLegada Lunes" />
@@ -1854,8 +1882,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Anviz_Data_BaseModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Anviz_Data_BaseModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Anviz_Data_BaseModel1.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Anviz_Data_BaseModel1.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

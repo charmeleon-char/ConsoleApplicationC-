@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ConsoleApplication2.0.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ConsoleApplication2.0.exe" version="1.0.0.0" publicKeyToken="a43c1216c2053584" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="ConsoleApplication2.0" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleApplication2.0.exe" size="209920">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleApplication2.0.exe" size="211968">
       <assemblyIdentity name="ConsoleApplication2.0" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zNdL9RIecCJa7iVsI+xesmJiiV1wtsMNG60zicATPWQ=</dsig:DigestValue>
+        <dsig:DigestValue>rTiI4jdTWV5ui3kqQpwez3ZY8OjgLkko2/TvOnPhq8g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -137,31 +137,31 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="ConsoleApplication2.0.exe.config" size="2025">
+  <file name="AnvizDb.Context.tt" size="26162">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>m/rcpH+zdw3tysOLmomheJRrKbYuenyfT9BkTk6ybCQ=</dsig:DigestValue>
+      <dsig:DigestValue>Q9fv5drYafaBZ82i5W9k9J5Aq4KQ+7tWcrA9ijU9rdo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Model1.Context.tt" size="26161">
+  <file name="AnvizDb.tt" size="28748">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kPUO9AZGkFcmlYcMmFb0CsYuIDWorXFOuJTMrq9ltkk=</dsig:DigestValue>
+      <dsig:DigestValue>SfD23CFMOYkT1TsGTtjoBRBJhA7pAz2AKHrC8ghuWXg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Model1.tt" size="28747">
+  <file name="ConsoleApplication2.0.exe.config" size="1248">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>x9lKBd3kOcEQU7MEItzskHI7OK69hl6JIhPmuJy2eQU=</dsig:DigestValue>
+      <dsig:DigestValue>KxkM1WNVLyaDrYub8uoFYYUvUr9PQVE8RLwqk3J9V98=</dsig:DigestValue>
     </hash>
   </file>
-</asmv1:assembly>
+<publisherIdentity name="CN=WIN-P1JSH4ME2PP\rcalix" issuerKeyHash="eaeb2f60a7ded496d07faf30dc89f39c13de957c" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>bP9hQdg70YRMiSvrMhHPfmm+aonOPszaexzMW8BKOZ0=</DigestValue></Reference></SignedInfo><SignatureValue>NgqhUnGYShPcE0LjwuQCIiUal9Dt48n12SWkmbV6HkKEUuNpSsP5wp9eq3cxABg+fLW4prXtBoQL76bJTHPGUTeNpw7hD1DsSZCTw6Q12JQ+qIz7OTJzBAg4pGDeRQAePl8/HMEEy+n/epoPvjfqfUZl06XDYPeL0/40Q+wHLPU=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>ugMyY6BKbKSbWnAd9vLTt2AJqOyYhwopTegxC1eackL7npnuym/2548JiwIf45jNn1QCkO93v6zfpDYLGpzqP3+r4BdCkV6cZA8duKrANVXJ5AlQxJsgGpYDWRoDrnjEqKeUNrGZU+r9H6mHrLFxeye8j0fTRjkmIytLumBt4+0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="9d394ac05bcc1c7bdacc3ece896abe697ecf1132eb2b894c84d13bd84161ff6c" Description="" Url=""><as:assemblyIdentity name="ConsoleApplication2.0.exe" version="1.0.0.0" publicKeyToken="a43c1216c2053584" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=WIN-P1JSH4ME2PP\rcalix</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Zl9+NHVo3nfTfTx1bJjPVQEJM2jE1V5FIVoRzMV6uL0=</DigestValue></Reference></SignedInfo><SignatureValue>PZwuVgAqAz0iFa/uzIGd75wizQMKHDis2tBiEKAFsbvps3Wy22Fg2W+F1NF7YGXy7GWy96SUxGRnN68eHk1iJJ6TaROLnqdXIHAOE5UvlQyE9kn4iSGGZm45kecb4n2/F9xU4x5wdsoVrAGGGEoMfICkZ9g8lBxbEgWg/X+zTT4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>ugMyY6BKbKSbWnAd9vLTt2AJqOyYhwopTegxC1eackL7npnuym/2548JiwIf45jNn1QCkO93v6zfpDYLGpzqP3+r4BdCkV6cZA8duKrANVXJ5AlQxJsgGpYDWRoDrnjEqKeUNrGZU+r9H6mHrLFxeye8j0fTRjkmIytLumBt4+0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQVCjitPVui5tPH9u0sg0N1DANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwAVwBJAE4ALQBQADEASgBTAEgANABNAEUAMgBQAFAAXAByAGMAYQBsAGkAeDAeFw0xNjAyMTIyMjIzMThaFw0xNzAyMTIwNDIzMThaMDcxNTAzBgNVBAMeLABXAEkATgAtAFAAMQBKAFMASAA0AE0ARQAyAFAAUABcAHIAYwBhAGwAaQB4MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6AzJjoEpspJtacB328tO3YAmo7JiHCilN6DELV5pyQvueme7Kb/bnjwmLAh/jmM2fVAKQ73e/rN+kNgsanOo/f6vgF0KRXpxkDx24qsA1VcnkCVDEmyAalgNZGgOueMSop5Q2sZlT6v0fqYessXF7J7yPR9NGOSYjK0u6YG3j7QIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAAj0lpF4jiyCWB0FV72rbDsfJsdeGsfl7MGqN9rOrwcDFFxMc/xz1RywAXHZxJbJKBHC+gorhxjaCktbuBhnd8Rr28/ZXqs3dHyB19HxFX1ua0+MRCTlPWlwKcnqY8gjwDh50ezB8OkCVQ7Gya+ArkVoIvpUYDjJdj2vxd7cGIeU</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
