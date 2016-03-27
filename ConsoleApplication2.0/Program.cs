@@ -98,7 +98,7 @@ namespace ConsoleApplication1
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.UseDefaultCredentials = false;
 
-                    client.Credentials = new NetworkCredential("raul.rivera@laureate.net", "RZJh8n9hVJjboJlsDCJ9HQ");
+                    client.Credentials = new NetworkCredential("account", "password");
                     try
                     {
                         Console.WriteLine("SendingEmailis " + dept_name + " for " + name + " ..................................");
