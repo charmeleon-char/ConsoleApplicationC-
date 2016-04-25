@@ -97,7 +97,7 @@ namespace ConsoleApplication1
                     client.Port = int.Parse("587");
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.UseDefaultCredentials = false;
-                
+                 
                     try
                     {
                         Console.WriteLine("SendingEmailis " + dept_name + " for " + name + " ..................................");
