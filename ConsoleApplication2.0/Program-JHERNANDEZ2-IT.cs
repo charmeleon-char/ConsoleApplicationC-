@@ -152,7 +152,7 @@ namespace ConsoleApplication1
             string monday = lastmonday.ToString("MM-dd-yyyy");
             string path = "";
             //  monday = ("12-14-2015");
-            Anviz_Data_BaseEntities_test_jose dc = new Anviz_Data_BaseEntities_test_jose();
+            Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2();
  
             var client = new MongoClient();
             var db = client.GetDatabase("admin");
@@ -1169,7 +1169,7 @@ namespace ConsoleApplication1
             for (int i = 0; i < 3; i++)
             {
 
-                using (Anviz_Data_BaseEntities_test_jose dc = new Anviz_Data_BaseEntities_test_jose())
+                using (Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2())
                 {
                     //   all = (from e in dc).ToList();
                     if (type == true)

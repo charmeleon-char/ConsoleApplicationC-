@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Anviz_Data_BaseModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Anviz_Data_BaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AddTimeSet">
           <Key>
             <PropertyRef Name="Userid" />
@@ -506,6 +506,14 @@ warning 6002: The table/view 'Anviz_Data_Base.dbo.V_UserClient' does not have a 
           <Parameter Name="id" Type="int" Mode="In" />
           <Parameter Name="date" Type="date" Mode="In" />
         </Function>
+        <Function Name="sensor_in" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="date" Type="date" Mode="In" />
+        </Function>
+        <Function Name="sensor_out" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="date" Type="date" Mode="In" />
+        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -548,7 +556,7 @@ warning 6002: The table/view 'Anviz_Data_Base.dbo.V_UserClient' does not have a 
           <Parameter Name="id" Type="int" Mode="In" />
           <Parameter Name="date" Type="date" Mode="In" />
         </Function>
-        <EntityContainer Name="Anviz_Data_BaseModel1StoreContainer">
+        <EntityContainer Name="Anviz_Data_BaseModelStoreContainer">
           <EntitySet Name="AddTimeSet" EntityType="Self.AddTimeSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BasePara" EntityType="Self.BasePara" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Checkinout" EntityType="Self.Checkinout" Schema="dbo" store:Type="Tables" />
@@ -697,98 +705,27 @@ FROM [dbo].[V_Class] AS [V_Class]</DefiningQuery>
 FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Anviz_Data_BaseModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Anviz_Data_BaseEntities2" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="AddTimeSets" EntityType="Anviz_Data_BaseModel1.AddTimeSet" />
-          <EntitySet Name="BaseParas" EntityType="Anviz_Data_BaseModel1.BasePara" />
-          <EntitySet Name="Checkinouts" EntityType="Anviz_Data_BaseModel1.Checkinout" />
-          <EntitySet Name="CheckLogs" EntityType="Anviz_Data_BaseModel1.CheckLog" />
-          <EntitySet Name="ClientSets" EntityType="Anviz_Data_BaseModel1.ClientSet" />
-          <EntitySet Name="DefineFields" EntityType="Anviz_Data_BaseModel1.DefineField" />
-          <EntitySet Name="Depts" EntityType="Anviz_Data_BaseModel1.Dept" />
-          <EntitySet Name="FingerClients" EntityType="Anviz_Data_BaseModel1.FingerClient" />
-          <EntitySet Name="Holidays" EntityType="Anviz_Data_BaseModel1.Holiday" />
-          <EntitySet Name="LeaveClasses" EntityType="Anviz_Data_BaseModel1.LeaveClass" />
-          <EntitySet Name="MemStats" EntityType="Anviz_Data_BaseModel1.MemStat" />
-          <EntitySet Name="OPinfoes" EntityType="Anviz_Data_BaseModel1.OPinfo" />
-          <EntitySet Name="OPLogs" EntityType="Anviz_Data_BaseModel1.OPLog" />
-          <EntitySet Name="OutProgs" EntityType="Anviz_Data_BaseModel1.OutProg" />
-          <EntitySet Name="Schedules" EntityType="Anviz_Data_BaseModel1.Schedule" />
-          <EntitySet Name="SchTimes" EntityType="Anviz_Data_BaseModel1.SchTime" />
-          <EntitySet Name="StatItems" EntityType="Anviz_Data_BaseModel1.StatItem" />
-          <EntitySet Name="Status" EntityType="Anviz_Data_BaseModel1.Status" />
-          <EntitySet Name="sysdiagrams" EntityType="Anviz_Data_BaseModel1.sysdiagram" />
-          <EntitySet Name="T_Checkinout" EntityType="Anviz_Data_BaseModel1.T_Checkinout" />
-          <EntitySet Name="T_UpdateClient" EntityType="Anviz_Data_BaseModel1.T_UpdateClient" />
-          <EntitySet Name="TimeTables" EntityType="Anviz_Data_BaseModel1.TimeTable" />
-          <EntitySet Name="UserCtrLogs" EntityType="Anviz_Data_BaseModel1.UserCtrLog" />
-          <EntitySet Name="Userinfoes" EntityType="Anviz_Data_BaseModel1.Userinfo" />
-          <EntitySet Name="Userinfo_BK" EntityType="Anviz_Data_BaseModel1.Userinfo_BK" />
-          <EntitySet Name="UserinfoBackups" EntityType="Anviz_Data_BaseModel1.UserinfoBackup" />
-          <EntitySet Name="UserLeaves" EntityType="Anviz_Data_BaseModel1.UserLeave" />
-          <EntitySet Name="UserPowers" EntityType="Anviz_Data_BaseModel1.UserPower" />
-          <EntitySet Name="UserShifts" EntityType="Anviz_Data_BaseModel1.UserShift" />
-          <EntitySet Name="UserTempShifts" EntityType="Anviz_Data_BaseModel1.UserTempShift" />
-          <EntitySet Name="V_Class" EntityType="Anviz_Data_BaseModel1.V_Class" />
-          <EntitySet Name="V_UserClient" EntityType="Anviz_Data_BaseModel1.V_UserClient" />
-          <FunctionImport Name="GetEmployes" ReturnType="Collection(Anviz_Data_BaseModel1.GetEmployes_Result)">
-            <Parameter Name="userid" Mode="In" Type="Int32" />
-            <Parameter Name="begindate" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Anviz_Data_BaseModel1.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Anviz_Data_BaseModel1.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_matrix_weekdays" ReturnType="Collection(Anviz_Data_BaseModel1.sp_matrix_weekdays_Result)">
-            <Parameter Name="idDepto" Mode="In" Type="Int32" />
-            <Parameter Name="begindate" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
-        </EntityContainer>
+      <Schema Namespace="Anviz_Data_BaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AddTimeSet">
           <Key>
             <PropertyRef Name="Userid" />
             <PropertyRef Name="Date" />
             <PropertyRef Name="TimeID" />
           </Key>
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TimeID" Type="Int32" Nullable="false" />
-          <Property Name="AddTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="BasePara">
           <Key>
             <PropertyRef Name="Company" />
           </Key>
-          <Property Name="Company" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TwoDay" Type="Int16" Nullable="false" />
           <Property Name="NoClockIn" Type="Boolean" Nullable="false" />
           <Property Name="NoClockOut" Type="Boolean" Nullable="false" />
@@ -801,7 +738,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Property Name="HOverTime" Type="Decimal" Precision="18" Scale="1" />
           <Property Name="FOverTime" Type="Decimal" Precision="18" Scale="1" />
           <Property Name="IsAutoDownRec" Type="Boolean" />
-          <Property Name="DownRecTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownRecTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="OvertimeIn" Type="Int16" />
           <Property Name="IsovertimeIn" Type="Boolean" />
           <Property Name="DeductIn" Type="Boolean" />
@@ -811,11 +748,11 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Key>
             <PropertyRef Name="Logid" />
           </Key>
-          <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Logid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CheckTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CheckType" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
-          <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CheckType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sensorid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Checked" Type="Boolean" />
           <Property Name="WorkType" Type="Int32" />
           <Property Name="AttFlag" Type="Int32" />
@@ -825,63 +762,46 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Key>
             <PropertyRef Name="Logid" />
           </Key>
-          <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Logid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Checktime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Checktype" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
-          <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Checktype" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Sensorid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="OPFlag" Type="Int16" />
-          <Property Name="Whys" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="OPname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Whys" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OPname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="ClientSet">
           <Key>
             <PropertyRef Name="Clientid" />
           </Key>
-          <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="Pwd" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="DTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Clientid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pwd" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="DTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="DefineField">
           <Key>
             <PropertyRef Name="Fieldid" />
           </Key>
-          <Property Name="Fieldid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="FieldName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="FieldValue" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Fieldid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FieldName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FieldValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Dept">
           <Key>
             <PropertyRef Name="Deptid" />
           </Key>
-          <Property Name="Deptid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="DeptName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Deptid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SupDeptid" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="FingerClient">
-          <Key>
-            <PropertyRef Name="Clientid" />
-          </Key>
-          <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="Linkmode" Type="Int16" />
-          <Property Name="IPaddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="ClientName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="ClientNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="Baudrate" Type="Int32" />
-          <Property Name="RecStatus" Type="Int32" />
-          <Property Name="Floorid" Type="Int32" />
-          <Property Name="MachineType" Type="Int32" />
-          <Property Name="DeviceType" Type="Int32" />
-          <Property Name="CommPWD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CommPort" Type="Int32" />
         </EntityType>
         <EntityType Name="Holiday">
           <Key>
             <PropertyRef Name="Holidayid" />
           </Key>
-          <Property Name="Holidayid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Holidayid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Days" Type="Int16" Nullable="false" />
         </EntityType>
@@ -889,19 +809,19 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Key>
             <PropertyRef Name="Classid" />
           </Key>
-          <Property Name="Classid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Classname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Classid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Classname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ViewColor" Type="Int32" Nullable="false" />
-          <Property Name="Showas" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="Showas" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="MemStat">
           <Key>
             <PropertyRef Name="Lsh" />
           </Key>
-          <Property Name="Lsh" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="Udept" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Uname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Lsh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Udept" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Uname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Normal" Type="Single" Nullable="false" />
           <Property Name="Actual" Type="Single" Nullable="false" />
           <Property Name="Latetime" Type="Single" Nullable="false" />
@@ -921,35 +841,35 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Key>
             <PropertyRef Name="Opid" />
           </Key>
-          <Property Name="Opid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Authority" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
-          <Property Name="Deptpower" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Opid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Authority" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Deptpower" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="OPLog">
           <Key>
             <PropertyRef Name="Logid" />
           </Key>
-          <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Logid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OPid" Type="Int32" Nullable="false" />
           <Property Name="Optime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="OPlog1" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="OPlog1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="OutProg">
           <Key>
             <PropertyRef Name="Progid" />
           </Key>
-          <Property Name="Progid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="ProgName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="ProgPath" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Progid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProgName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProgPath" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Schedule">
           <Key>
             <PropertyRef Name="Schid" />
           </Key>
-          <Property Name="Schid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Schname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Schid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Schname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cycles" Type="Int16" Nullable="false" />
           <Property Name="Units" Type="Int16" Nullable="false" />
           <Property Name="AutoClass" Type="Boolean" />
@@ -968,30 +888,30 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Key>
             <PropertyRef Name="Itemid" />
           </Key>
-          <Property Name="Itemid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Itemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Units" Type="Int16" Nullable="false" />
-          <Property Name="MinUnit" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="MinUnit" Type="Decimal" Precision="18" Scale="1" Nullable="false" />
           <Property Name="SRControl" Type="Int16" Nullable="false" />
           <Property Name="IsAddup" Type="Boolean" Nullable="false" />
           <Property Name="IsTimes" Type="Boolean" Nullable="false" />
-          <Property Name="Showas" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="Showas" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
             <PropertyRef Name="Statusid" />
           </Key>
           <Property Name="Statusid" Type="Int32" Nullable="false" />
-          <Property Name="StatusChar" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
-          <Property Name="StatusText" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StatusChar" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StatusText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
@@ -999,11 +919,11 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Key>
             <PropertyRef Name="Logid" />
           </Key>
-          <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Logid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CheckTime" Type="DateTime" Precision="3" />
-          <Property Name="CheckType" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
-          <Property Name="Sensorid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CheckType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Sensorid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Checked" Type="Boolean" Nullable="false" />
           <Property Name="WorkType" Type="Int32" Nullable="false" />
           <Property Name="AttFlag" Type="Int32" Nullable="false" />
@@ -1012,23 +932,23 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Key>
             <PropertyRef Name="Clientid" />
           </Key>
-          <Property Name="Clientid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Clientid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="TimeTable">
           <Key>
             <PropertyRef Name="Timeid" />
           </Key>
-          <Property Name="Timeid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Timename" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="Intime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="Outtime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="BIntime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="EIntime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="BOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="EOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Timeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Timename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Intime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Outtime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BIntime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EIntime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BOuttime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EOuttime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Latetime" Type="Int16" Nullable="false" />
           <Property Name="Leavetime" Type="Int16" Nullable="false" />
-          <Property Name="WorkDays" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="WorkDays" Type="Decimal" Precision="18" Scale="1" Nullable="false" />
           <Property Name="Longtime" Type="Int16" Nullable="false" />
           <Property Name="MustIn" Type="Boolean" />
           <Property Name="MustOut" Type="Boolean" />
@@ -1039,72 +959,132 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
           <Key>
             <PropertyRef Name="Logid" />
           </Key>
-          <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Clientid" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="Userid" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Logid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Clientid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CheckTime" Type="DateTime" Precision="3" />
-          <Property Name="ULog" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="ULog" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Userinfo">
           <Key>
             <PropertyRef Name="Userid" />
           </Key>
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Sex" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="Pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Deptid" Type="Int32" Nullable="false" />
-          <Property Name="Nation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Nation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Brithday" Type="DateTime" Precision="0" />
           <Property Name="EmployDate" Type="DateTime" Precision="0" />
-          <Property Name="Telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Duty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="NativePlace" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="IDCard" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Educated" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Polity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Specialty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NativePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Educated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Polity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Specialty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IsAtt" Type="Boolean" />
           <Property Name="Isovertime" Type="Boolean" />
           <Property Name="Isrest" Type="Boolean" />
-          <Property Name="Remark" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="MgFlag" Type="Int16" />
-          <Property Name="CardNum" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CardNum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserFlag" Type="Int32" />
           <Property Name="Groupid" Type="Int32" />
           <Property Name="workdaylong" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UserLeave">
+          <Key>
+            <PropertyRef Name="Lsh" />
+          </Key>
+          <Property Name="Lsh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LeaveClassid" Type="Int32" Nullable="false" />
+          <Property Name="Whys" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserPower">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PowerFlag" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserShift">
+          <Key>
+            <PropertyRef Name="Userid" />
+            <PropertyRef Name="Schid" />
+            <PropertyRef Name="BeginDate" />
+            <PropertyRef Name="EndDate" />
+          </Key>
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Schid" Type="Int32" Nullable="false" />
+          <Property Name="BeginDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EndDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserTempShift">
+          <Key>
+            <PropertyRef Name="Userid" />
+            <PropertyRef Name="Timeid" />
+            <PropertyRef Name="WorkDate" />
+          </Key>
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Timeid" Type="Int32" Nullable="false" />
+          <Property Name="WorkDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsOvertime" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FingerClient">
+          <Key>
+            <PropertyRef Name="Clientid" />
+          </Key>
+          <Property Name="Clientid" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Linkmode" Type="Int16" />
+          <Property Name="IPaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Baudrate" Type="Int32" />
+          <Property Name="RecStatus" Type="Int32" />
+          <Property Name="Floorid" Type="Int32" />
+          <Property Name="MachineType" Type="Int32" />
+          <Property Name="DeviceType" Type="Int32" />
+          <Property Name="CommPWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CommPort" Type="Int32" />
         </EntityType>
         <EntityType Name="Userinfo_BK">
           <Key>
             <PropertyRef Name="Userid" />
             <PropertyRef Name="Deptid" />
           </Key>
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Sex" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="Pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Deptid" Type="Int32" Nullable="false" />
-          <Property Name="Nation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Nation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Brithday" Type="DateTime" Precision="0" />
           <Property Name="EmployDate" Type="DateTime" Precision="0" />
-          <Property Name="Telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Duty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="NativePlace" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="IDCard" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Educated" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Polity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Specialty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NativePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Educated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Polity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Specialty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IsAtt" Type="Boolean" />
           <Property Name="Isovertime" Type="Boolean" />
           <Property Name="Isrest" Type="Boolean" />
-          <Property Name="Remark" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="MgFlag" Type="Int16" />
-          <Property Name="CardNum" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CardNum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserFlag" Type="Int32" />
           <Property Name="Groupid" Type="Int32" />
@@ -1116,77 +1096,34 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             <PropertyRef Name="Isovertime" />
             <PropertyRef Name="Isrest" />
           </Key>
-          <Property Name="Userid" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Sex" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="Pwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Deptid" Type="Int32" />
-          <Property Name="Nation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Nation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Brithday" Type="DateTime" Precision="3" />
           <Property Name="EmployDate" Type="DateTime" Precision="3" />
-          <Property Name="Telephone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Duty" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="NativePlace" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="IDCard" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
-          <Property Name="Mobile" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Educated" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Polity" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Specialty" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NativePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Educated" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Polity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Specialty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsAtt" Type="Boolean" Nullable="false" />
           <Property Name="Isovertime" Type="Boolean" Nullable="false" />
           <Property Name="Isrest" Type="Boolean" Nullable="false" />
-          <Property Name="Remark" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="MgFlag" Type="Int16" />
-          <Property Name="Cardnum" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-          <Property Name="Machineid" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Cardnum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Machineid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserFlag" Type="Int32" />
           <Property Name="Groupid" Type="Int32" />
           <Property Name="workdaylong" Type="Int32" />
-        </EntityType>
-        <EntityType Name="UserLeave">
-          <Key>
-            <PropertyRef Name="Lsh" />
-          </Key>
-          <Property Name="Lsh" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LeaveClassid" Type="Int32" Nullable="false" />
-          <Property Name="Whys" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="UserPower">
-          <Key>
-            <PropertyRef Name="Logid" />
-          </Key>
-          <Property Name="Logid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="ClientNumber" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="PowerFlag" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="UserShift">
-          <Key>
-            <PropertyRef Name="Userid" />
-            <PropertyRef Name="Schid" />
-            <PropertyRef Name="BeginDate" />
-            <PropertyRef Name="EndDate" />
-          </Key>
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="Schid" Type="Int32" Nullable="false" />
-          <Property Name="BeginDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="EndDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="UserTempShift">
-          <Key>
-            <PropertyRef Name="Userid" />
-            <PropertyRef Name="Timeid" />
-            <PropertyRef Name="WorkDate" />
-          </Key>
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="Timeid" Type="Int32" Nullable="false" />
-          <Property Name="WorkDate" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="IsOvertime" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="V_Class">
           <Key>
@@ -1209,22 +1146,22 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             <PropertyRef Name="Longtime" />
           </Key>
           <Property Name="Schid" Type="Int32" Nullable="false" />
-          <Property Name="Schname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Schname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cycles" Type="Int16" Nullable="false" />
           <Property Name="Units" Type="Int16" Nullable="false" />
           <Property Name="AutoClass" Type="Boolean" />
           <Property Name="BeginDay" Type="Int16" Nullable="false" />
           <Property Name="Timeid" Type="Int32" Nullable="false" />
-          <Property Name="Timename" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="Intime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="Outtime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="BIntime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="EIntime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="BOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="EOuttime" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Timename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Intime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Outtime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BIntime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EIntime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BOuttime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EOuttime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Latetime" Type="Int16" Nullable="false" />
           <Property Name="Leavetime" Type="Int16" Nullable="false" />
-          <Property Name="WorkDays" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="WorkDays" Type="Decimal" Precision="18" Scale="1" Nullable="false" />
           <Property Name="Longtime" Type="Int16" Nullable="false" />
           <Property Name="MustIn" Type="Boolean" />
           <Property Name="MustOut" Type="Boolean" />
@@ -1240,76 +1177,165 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             <PropertyRef Name="Deptid" />
           </Key>
           <Property Name="Logid" Type="Int32" Nullable="false" />
-          <Property Name="Userid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="ClientNumber" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PowerFlag" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="CardNum" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CardNum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Deptid" Type="Int32" Nullable="false" />
           <Property Name="UserFlag" Type="Int32" />
           <Property Name="MgFlag" Type="Int16" />
           <Property Name="Groupid" Type="Int32" />
         </EntityType>
+        <EntityContainer Name="Anviz_Data_BaseEntities_test_jose" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddTimeSets" EntityType="Self.AddTimeSet" />
+          <EntitySet Name="BaseParas" EntityType="Self.BasePara" />
+          <EntitySet Name="Checkinouts" EntityType="Self.Checkinout" />
+          <EntitySet Name="CheckLogs" EntityType="Self.CheckLog" />
+          <EntitySet Name="ClientSets" EntityType="Self.ClientSet" />
+          <EntitySet Name="DefineFields" EntityType="Self.DefineField" />
+          <EntitySet Name="Depts" EntityType="Self.Dept" />
+          <EntitySet Name="Holidays" EntityType="Self.Holiday" />
+          <EntitySet Name="LeaveClasses" EntityType="Self.LeaveClass" />
+          <EntitySet Name="MemStats" EntityType="Self.MemStat" />
+          <EntitySet Name="OPinfoes" EntityType="Self.OPinfo" />
+          <EntitySet Name="OPLogs" EntityType="Self.OPLog" />
+          <EntitySet Name="OutProgs" EntityType="Self.OutProg" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+          <EntitySet Name="SchTimes" EntityType="Self.SchTime" />
+          <EntitySet Name="StatItems" EntityType="Self.StatItem" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="T_Checkinout" EntityType="Self.T_Checkinout" />
+          <EntitySet Name="T_UpdateClient" EntityType="Self.T_UpdateClient" />
+          <EntitySet Name="TimeTables" EntityType="Self.TimeTable" />
+          <EntitySet Name="UserCtrLogs" EntityType="Self.UserCtrLog" />
+          <EntitySet Name="Userinfoes" EntityType="Self.Userinfo" />
+          <EntitySet Name="UserLeaves" EntityType="Self.UserLeave" />
+          <EntitySet Name="UserPowers" EntityType="Self.UserPower" />
+          <EntitySet Name="UserShifts" EntityType="Self.UserShift" />
+          <EntitySet Name="UserTempShifts" EntityType="Self.UserTempShift" />
+          <EntitySet Name="FingerClients" EntityType="Self.FingerClient" />
+          <EntitySet Name="Userinfo_BK" EntityType="Self.Userinfo_BK" />
+          <EntitySet Name="UserinfoBackups" EntityType="Self.UserinfoBackup" />
+          <EntitySet Name="V_Class" EntityType="Self.V_Class" />
+          <EntitySet Name="V_UserClient" EntityType="Self.V_UserClient" />
+          <FunctionImport Name="GetEmployes" ReturnType="Collection(Anviz_Data_BaseModel.GetEmployes_Result)">
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+            <Parameter Name="begindate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_matrix_weekdays" ReturnType="Collection(Anviz_Data_BaseModel.sp_matrix_weekdays_Result)">
+            <Parameter Name="idDepto" Mode="In" Type="Int32" />
+            <Parameter Name="begindate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
         <ComplexType Name="GetEmployes_Result">
           <Property Type="String" Name="userid" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Lunes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Lunes" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Lunes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Lunes" Nullable="true" />
           <Property Type="Decimal" Name="Monday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Martes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Martes" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Martes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Martes" Nullable="true" />
           <Property Type="Decimal" Name="Tuesday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Miercoles" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Miercoles" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Miercoles" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Miercoles" Nullable="true" />
           <Property Type="Decimal" Name="Wednsday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Jueves" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Jueves" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Jueves" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Jueves" Nullable="true" />
           <Property Type="Decimal" Name="Thursday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Viernes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Viernes" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Viernes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Viernes" Nullable="true" />
           <Property Type="Decimal" Name="Friday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Sabado" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Sabado" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Sabado" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Sabado1" Nullable="true" />
           <Property Type="Decimal" Name="Saturday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Domingo" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Domingo" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Domingo" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Domingo1" Nullable="true" />
           <Property Type="Decimal" Name="Sunday" Nullable="true" Precision="18" Scale="2" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
         <ComplexType Name="sp_matrix_weekdays_Result">
           <Property Type="String" Name="userid" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Lunes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Lunes" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Lunes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Lunes" Nullable="true" />
           <Property Type="Decimal" Name="Monday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Martes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Martes" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Martes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Martes" Nullable="true" />
           <Property Type="Decimal" Name="Tuesday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Miercoles" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Miercoles" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Miercoles" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Miercoles" Nullable="true" />
           <Property Type="Decimal" Name="Wednsday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Jueves" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Jueves" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Jueves" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Jueves" Nullable="true" />
           <Property Type="Decimal" Name="Thursday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Viernes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Viernes" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Viernes" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Salida_Viernes" Nullable="true" />
           <Property Type="Decimal" Name="Friday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Sabado" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Sabado" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Sabado" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Sabado1" Nullable="true" />
           <Property Type="Decimal" Name="Saturday" Nullable="true" Precision="18" Scale="2" />
           <Property Type="DateTime" Name="Hora_de_LLegada_Domingo" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Domingo" Nullable="true" />
           <Property Type="DateTime" Name="Hora_de_salida_Domingo" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Lugar_de_Marcaje_Llegada_Domingo1" Nullable="true" />
           <Property Type="Decimal" Name="Sunday" Nullable="true" Precision="18" Scale="2" />
         </ComplexType>
       </Schema>
@@ -1317,9 +1343,9 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Anviz_Data_BaseModel1StoreContainer" CdmEntityContainer="Anviz_Data_BaseEntities2">
+        <EntityContainerMapping StorageEntityContainer="Anviz_Data_BaseModelStoreContainer" CdmEntityContainer="Anviz_Data_BaseEntities_test_jose">
           <EntitySetMapping Name="AddTimeSets">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.AddTimeSet">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.AddTimeSet">
               <MappingFragment StoreEntitySet="AddTimeSet">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -1329,7 +1355,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BaseParas">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.BasePara">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.BasePara">
               <MappingFragment StoreEntitySet="BasePara">
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="TwoDay" ColumnName="TwoDay" />
@@ -1353,7 +1379,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Checkinouts">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Checkinout">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Checkinout">
               <MappingFragment StoreEntitySet="Checkinout">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1368,7 +1394,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CheckLogs">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.CheckLog">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.CheckLog">
               <MappingFragment StoreEntitySet="CheckLog">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1383,7 +1409,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ClientSets">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.ClientSet">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.ClientSet">
               <MappingFragment StoreEntitySet="ClientSet">
                 <ScalarProperty Name="Clientid" ColumnName="Clientid" />
                 <ScalarProperty Name="Pwd" ColumnName="Pwd" />
@@ -1392,7 +1418,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DefineFields">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.DefineField">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.DefineField">
               <MappingFragment StoreEntitySet="DefineField">
                 <ScalarProperty Name="Fieldid" ColumnName="Fieldid" />
                 <ScalarProperty Name="FieldName" ColumnName="FieldName" />
@@ -1401,7 +1427,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Depts">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Dept">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Dept">
               <MappingFragment StoreEntitySet="Dept">
                 <ScalarProperty Name="Deptid" ColumnName="Deptid" />
                 <ScalarProperty Name="DeptName" ColumnName="DeptName" />
@@ -1409,26 +1435,8 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FingerClients">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.FingerClient">
-              <MappingFragment StoreEntitySet="FingerClient">
-                <ScalarProperty Name="Clientid" ColumnName="Clientid" />
-                <ScalarProperty Name="Linkmode" ColumnName="Linkmode" />
-                <ScalarProperty Name="IPaddress" ColumnName="IPaddress" />
-                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
-                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
-                <ScalarProperty Name="Baudrate" ColumnName="Baudrate" />
-                <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
-                <ScalarProperty Name="Floorid" ColumnName="Floorid" />
-                <ScalarProperty Name="MachineType" ColumnName="MachineType" />
-                <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
-                <ScalarProperty Name="CommPWD" ColumnName="CommPWD" />
-                <ScalarProperty Name="CommPort" ColumnName="CommPort" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Holidays">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Holiday">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Holiday">
               <MappingFragment StoreEntitySet="Holiday">
                 <ScalarProperty Name="Holidayid" ColumnName="Holidayid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1438,7 +1446,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LeaveClasses">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.LeaveClass">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.LeaveClass">
               <MappingFragment StoreEntitySet="LeaveClass">
                 <ScalarProperty Name="Classid" ColumnName="Classid" />
                 <ScalarProperty Name="Classname" ColumnName="Classname" />
@@ -1448,7 +1456,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MemStats">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.MemStat">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.MemStat">
               <MappingFragment StoreEntitySet="MemStat">
                 <ScalarProperty Name="Lsh" ColumnName="Lsh" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1472,7 +1480,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OPinfoes">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.OPinfo">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OPinfo">
               <MappingFragment StoreEntitySet="OPinfo">
                 <ScalarProperty Name="Opid" ColumnName="Opid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1483,7 +1491,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OPLogs">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.OPLog">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OPLog">
               <MappingFragment StoreEntitySet="OPLog">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="OPid" ColumnName="OPid" />
@@ -1493,7 +1501,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OutProgs">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.OutProg">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.OutProg">
               <MappingFragment StoreEntitySet="OutProg">
                 <ScalarProperty Name="Progid" ColumnName="Progid" />
                 <ScalarProperty Name="ProgName" ColumnName="ProgName" />
@@ -1502,7 +1510,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Schedules">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Schedule">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Schedule">
               <MappingFragment StoreEntitySet="Schedule">
                 <ScalarProperty Name="Schid" ColumnName="Schid" />
                 <ScalarProperty Name="Schname" ColumnName="Schname" />
@@ -1513,7 +1521,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SchTimes">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.SchTime">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.SchTime">
               <MappingFragment StoreEntitySet="SchTime">
                 <ScalarProperty Name="Schid" ColumnName="Schid" />
                 <ScalarProperty Name="BeginDay" ColumnName="BeginDay" />
@@ -1522,7 +1530,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StatItems">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.StatItem">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.StatItem">
               <MappingFragment StoreEntitySet="StatItems">
                 <ScalarProperty Name="Itemid" ColumnName="Itemid" />
                 <ScalarProperty Name="ItemName" ColumnName="ItemName" />
@@ -1536,7 +1544,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Status">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Status">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Status">
               <MappingFragment StoreEntitySet="Status">
                 <ScalarProperty Name="Statusid" ColumnName="Statusid" />
                 <ScalarProperty Name="StatusChar" ColumnName="StatusChar" />
@@ -1545,7 +1553,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.sysdiagram">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1556,7 +1564,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="T_Checkinout">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.T_Checkinout">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.T_Checkinout">
               <MappingFragment StoreEntitySet="T_Checkinout">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1570,14 +1578,14 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="T_UpdateClient">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.T_UpdateClient">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.T_UpdateClient">
               <MappingFragment StoreEntitySet="T_UpdateClient">
                 <ScalarProperty Name="Clientid" ColumnName="Clientid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TimeTables">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.TimeTable">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.TimeTable">
               <MappingFragment StoreEntitySet="TimeTable">
                 <ScalarProperty Name="Timeid" ColumnName="Timeid" />
                 <ScalarProperty Name="Timename" ColumnName="Timename" />
@@ -1599,7 +1607,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserCtrLogs">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserCtrLog">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserCtrLog">
               <MappingFragment StoreEntitySet="UserCtrLog">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Clientid" ColumnName="Clientid" />
@@ -1610,7 +1618,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Userinfoes">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Userinfo">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Userinfo">
               <MappingFragment StoreEntitySet="Userinfo">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1642,8 +1650,68 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="UserLeaves">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserLeave">
+              <MappingFragment StoreEntitySet="UserLeave">
+                <ScalarProperty Name="Lsh" ColumnName="Lsh" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="LeaveClassid" ColumnName="LeaveClassid" />
+                <ScalarProperty Name="Whys" ColumnName="Whys" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPowers">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserPower">
+              <MappingFragment StoreEntitySet="UserPower">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="PowerFlag" ColumnName="PowerFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserShifts">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserShift">
+              <MappingFragment StoreEntitySet="UserShift">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Schid" ColumnName="Schid" />
+                <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTempShifts">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserTempShift">
+              <MappingFragment StoreEntitySet="UserTempShift">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Timeid" ColumnName="Timeid" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+                <ScalarProperty Name="IsOvertime" ColumnName="IsOvertime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FingerClients">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.FingerClient">
+              <MappingFragment StoreEntitySet="FingerClient">
+                <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+                <ScalarProperty Name="Linkmode" ColumnName="Linkmode" />
+                <ScalarProperty Name="IPaddress" ColumnName="IPaddress" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="Baudrate" ColumnName="Baudrate" />
+                <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+                <ScalarProperty Name="Floorid" ColumnName="Floorid" />
+                <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+                <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+                <ScalarProperty Name="CommPWD" ColumnName="CommPWD" />
+                <ScalarProperty Name="CommPort" ColumnName="CommPort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Userinfo_BK">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.Userinfo_BK">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.Userinfo_BK">
               <MappingFragment StoreEntitySet="Userinfo_BK">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1676,7 +1744,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserinfoBackups">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserinfoBackup">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.UserinfoBackup">
               <MappingFragment StoreEntitySet="UserinfoBackup">
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1709,50 +1777,8 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserLeaves">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserLeave">
-              <MappingFragment StoreEntitySet="UserLeave">
-                <ScalarProperty Name="Lsh" ColumnName="Lsh" />
-                <ScalarProperty Name="Userid" ColumnName="Userid" />
-                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-                <ScalarProperty Name="LeaveClassid" ColumnName="LeaveClassid" />
-                <ScalarProperty Name="Whys" ColumnName="Whys" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UserPowers">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserPower">
-              <MappingFragment StoreEntitySet="UserPower">
-                <ScalarProperty Name="Logid" ColumnName="Logid" />
-                <ScalarProperty Name="Userid" ColumnName="Userid" />
-                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
-                <ScalarProperty Name="PowerFlag" ColumnName="PowerFlag" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UserShifts">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserShift">
-              <MappingFragment StoreEntitySet="UserShift">
-                <ScalarProperty Name="Userid" ColumnName="Userid" />
-                <ScalarProperty Name="Schid" ColumnName="Schid" />
-                <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UserTempShifts">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.UserTempShift">
-              <MappingFragment StoreEntitySet="UserTempShift">
-                <ScalarProperty Name="Userid" ColumnName="Userid" />
-                <ScalarProperty Name="Timeid" ColumnName="Timeid" />
-                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
-                <ScalarProperty Name="IsOvertime" ColumnName="IsOvertime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="V_Class">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.V_Class">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.V_Class">
               <MappingFragment StoreEntitySet="V_Class">
                 <ScalarProperty Name="Schid" ColumnName="Schid" />
                 <ScalarProperty Name="Schname" ColumnName="Schname" />
@@ -1780,7 +1806,7 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="V_UserClient">
-            <EntityTypeMapping TypeName="Anviz_Data_BaseModel1.V_UserClient">
+            <EntityTypeMapping TypeName="Anviz_Data_BaseModel.V_UserClient">
               <MappingFragment StoreEntitySet="V_UserClient">
                 <ScalarProperty Name="Logid" ColumnName="Logid" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
@@ -1796,88 +1822,99 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="GetEmployes" FunctionName="Anviz_Data_BaseModel1.Store.GetEmployes">
+          <FunctionImportMapping FunctionImportName="GetEmployes" FunctionName="Anviz_Data_BaseModel.Store.GetEmployes">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel1.GetEmployes_Result">
+              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel.GetEmployes_Result">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="Hora_de_LLegada_Lunes" ColumnName="Hora de LLegada Lunes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Lunes" ColumnName="Lugar de Marcaje Llegada Lunes" />
                 <ScalarProperty Name="Hora_de_salida_Lunes" ColumnName="Hora de salida Lunes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Lunes" ColumnName="Lugar de Marcaje Salida Lunes" />
                 <ScalarProperty Name="Monday" ColumnName="Monday" />
                 <ScalarProperty Name="Hora_de_LLegada_Martes" ColumnName="Hora de LLegada Martes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Martes" ColumnName="Lugar de Marcaje Llegada Martes" />
                 <ScalarProperty Name="Hora_de_salida_Martes" ColumnName="Hora de salida Martes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Martes" ColumnName="Lugar de Marcaje Salida Martes" />
                 <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
                 <ScalarProperty Name="Hora_de_LLegada_Miercoles" ColumnName="Hora de LLegada Miercoles" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Miercoles" ColumnName="Lugar de Marcaje Llegada Miercoles" />
                 <ScalarProperty Name="Hora_de_salida_Miercoles" ColumnName="Hora de salida Miercoles" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Miercoles" ColumnName="Lugar de Marcaje Salida Miercoles" />
                 <ScalarProperty Name="Wednsday" ColumnName="Wednsday" />
                 <ScalarProperty Name="Hora_de_LLegada_Jueves" ColumnName="Hora de LLegada Jueves" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Jueves" ColumnName="Lugar de Marcaje Llegada Jueves" />
                 <ScalarProperty Name="Hora_de_salida_Jueves" ColumnName="Hora de salida Jueves" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Jueves" ColumnName="Lugar de Marcaje Salida Jueves" />
                 <ScalarProperty Name="Thursday" ColumnName="Thursday" />
                 <ScalarProperty Name="Hora_de_LLegada_Viernes" ColumnName="Hora de LLegada Viernes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Viernes" ColumnName="Lugar de Marcaje Llegada Viernes" />
                 <ScalarProperty Name="Hora_de_salida_Viernes" ColumnName="Hora de salida Viernes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Viernes" ColumnName="Lugar de Marcaje Salida Viernes" />
                 <ScalarProperty Name="Friday" ColumnName="Friday" />
                 <ScalarProperty Name="Hora_de_LLegada_Sabado" ColumnName="Hora de LLegada Sabado" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Sabado" ColumnName="Lugar de Marcaje Llegada Sabado" />
                 <ScalarProperty Name="Hora_de_salida_Sabado" ColumnName="Hora de salida Sabado" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Sabado1" ColumnName="Lugar de Marcaje Llegada Sabado1" />
                 <ScalarProperty Name="Saturday" ColumnName="Saturday" />
                 <ScalarProperty Name="Hora_de_LLegada_Domingo" ColumnName="Hora de LLegada Domingo" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Domingo" ColumnName="Lugar de Marcaje Llegada Domingo" />
                 <ScalarProperty Name="Hora_de_salida_Domingo" ColumnName="Hora de salida Domingo" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Domingo1" ColumnName="Lugar de Marcaje Llegada Domingo1" />
                 <ScalarProperty Name="Sunday" ColumnName="Sunday" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Anviz_Data_BaseModel1.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Anviz_Data_BaseModel1.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Anviz_Data_BaseModel1.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Anviz_Data_BaseModel1.Store.sp_helpdiagramdefinition">
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Anviz_Data_BaseModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Anviz_Data_BaseModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Anviz_Data_BaseModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Anviz_Data_BaseModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Anviz_Data_BaseModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_matrix_weekdays" FunctionName="Anviz_Data_BaseModel.Store.sp_matrix_weekdays">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel1.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Anviz_Data_BaseModel1.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel1.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_matrix_weekdays" FunctionName="Anviz_Data_BaseModel1.Store.sp_matrix_weekdays">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel1.sp_matrix_weekdays_Result">
+              <ComplexTypeMapping TypeName="Anviz_Data_BaseModel.sp_matrix_weekdays_Result">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="Hora_de_LLegada_Lunes" ColumnName="Hora de LLegada Lunes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Lunes" ColumnName="Lugar de Marcaje Llegada Lunes" />
                 <ScalarProperty Name="Hora_de_salida_Lunes" ColumnName="Hora de salida Lunes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Lunes" ColumnName="Lugar de Marcaje Salida Lunes" />
                 <ScalarProperty Name="Monday" ColumnName="Monday" />
                 <ScalarProperty Name="Hora_de_LLegada_Martes" ColumnName="Hora de LLegada Martes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Martes" ColumnName="Lugar de Marcaje Llegada Martes" />
                 <ScalarProperty Name="Hora_de_salida_Martes" ColumnName="Hora de salida Martes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Martes" ColumnName="Lugar de Marcaje Salida Martes" />
                 <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
                 <ScalarProperty Name="Hora_de_LLegada_Miercoles" ColumnName="Hora de LLegada Miercoles" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Miercoles" ColumnName="Lugar de Marcaje Llegada Miercoles" />
                 <ScalarProperty Name="Hora_de_salida_Miercoles" ColumnName="Hora de salida Miercoles" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Miercoles" ColumnName="Lugar de Marcaje Salida Miercoles" />
                 <ScalarProperty Name="Wednsday" ColumnName="Wednsday" />
                 <ScalarProperty Name="Hora_de_LLegada_Jueves" ColumnName="Hora de LLegada Jueves" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Jueves" ColumnName="Lugar de Marcaje Llegada Jueves" />
                 <ScalarProperty Name="Hora_de_salida_Jueves" ColumnName="Hora de salida Jueves" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Jueves" ColumnName="Lugar de Marcaje Salida Jueves" />
                 <ScalarProperty Name="Thursday" ColumnName="Thursday" />
                 <ScalarProperty Name="Hora_de_LLegada_Viernes" ColumnName="Hora de LLegada Viernes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Viernes" ColumnName="Lugar de Marcaje Llegada Viernes" />
                 <ScalarProperty Name="Hora_de_salida_Viernes" ColumnName="Hora de salida Viernes" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Salida_Viernes" ColumnName="Lugar de Marcaje Salida Viernes" />
                 <ScalarProperty Name="Friday" ColumnName="Friday" />
                 <ScalarProperty Name="Hora_de_LLegada_Sabado" ColumnName="Hora de LLegada Sabado" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Sabado" ColumnName="Lugar de Marcaje Llegada Sabado" />
                 <ScalarProperty Name="Hora_de_salida_Sabado" ColumnName="Hora de salida Sabado" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Sabado1" ColumnName="Lugar de Marcaje Llegada Sabado1" />
                 <ScalarProperty Name="Saturday" ColumnName="Saturday" />
                 <ScalarProperty Name="Hora_de_LLegada_Domingo" ColumnName="Hora de LLegada Domingo" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Domingo" ColumnName="Lugar de Marcaje Llegada Domingo" />
                 <ScalarProperty Name="Hora_de_salida_Domingo" ColumnName="Hora de salida Domingo" />
+                <ScalarProperty Name="Lugar_de_Marcaje_Llegada_Domingo1" ColumnName="Lugar de Marcaje Llegada Domingo1" />
                 <ScalarProperty Name="Sunday" ColumnName="Sunday" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Anviz_Data_BaseModel1.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Anviz_Data_BaseModel1.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Anviz_Data_BaseModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Anviz_Data_BaseModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1892,10 +1929,10 @@ FROM [dbo].[V_UserClient] AS [V_UserClient]</DefiningQuery>
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
