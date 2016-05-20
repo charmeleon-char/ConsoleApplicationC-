@@ -37,6 +37,7 @@
         <EntityTypeShape EntityType="Anviz_Data_BaseModel1.UserTempShift" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Anviz_Data_BaseModel1.V_Class" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Anviz_Data_BaseModel1.V_UserClient" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="Anviz_Data_BaseModel1.Test" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
