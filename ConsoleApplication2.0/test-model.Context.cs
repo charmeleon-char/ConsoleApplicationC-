@@ -16,10 +16,10 @@ namespace ConsoleApplication2._0
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class Anviz_Data_BaseEntities2 : DbContext
+    public partial class Anviz_test_jose : DbContext
     {
-        public Anviz_Data_BaseEntities2()
-            : base("name=Anviz_Data_BaseEntities2")
+        public Anviz_test_jose()
+            : base("name=Anviz_test_jose")
         {
         }
     
@@ -35,7 +35,6 @@ namespace ConsoleApplication2._0
         public DbSet<ClientSet> ClientSets { get; set; }
         public DbSet<DefineField> DefineFields { get; set; }
         public DbSet<Dept> Depts { get; set; }
-        public DbSet<FingerClient> FingerClients { get; set; }
         public DbSet<Holiday> Holidays { get; set; }
         public DbSet<LeaveClass> LeaveClasses { get; set; }
         public DbSet<MemStat> MemStats { get; set; }
@@ -52,12 +51,13 @@ namespace ConsoleApplication2._0
         public DbSet<TimeTable> TimeTables { get; set; }
         public DbSet<UserCtrLog> UserCtrLogs { get; set; }
         public DbSet<Userinfo> Userinfoes { get; set; }
-        public DbSet<Userinfo_BK> Userinfo_BK { get; set; }
-        public DbSet<UserinfoBackup> UserinfoBackups { get; set; }
         public DbSet<UserLeave> UserLeaves { get; set; }
         public DbSet<UserPower> UserPowers { get; set; }
         public DbSet<UserShift> UserShifts { get; set; }
         public DbSet<UserTempShift> UserTempShifts { get; set; }
+        public DbSet<FingerClient> FingerClients { get; set; }
+        public DbSet<Userinfo_BK> Userinfo_BK { get; set; }
+        public DbSet<UserinfoBackup> UserinfoBackups { get; set; }
         public DbSet<V_Class> V_Class { get; set; }
         public DbSet<V_UserClient> V_UserClient { get; set; }
     
@@ -129,7 +129,7 @@ namespace ConsoleApplication2._0
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -139,10 +139,10 @@ namespace ConsoleApplication2._0
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -152,7 +152,7 @@ namespace ConsoleApplication2._0
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual ObjectResult<sp_matrix_weekdays_Result> sp_matrix_weekdays(Nullable<int> idDepto, string begindate)

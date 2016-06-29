@@ -56,20 +56,13 @@ namespace ConsoleApplication1
             public Decimal? HorasFriday { get; set; }
             public Decimal? HorasSaturday { get; set; }
             public Decimal? HorasSunday { get; set; }
-            public int? SensorInMonday { get; set; }
-            public int? SensorOutMonday { get; set; }
-            public int? SensorInTuesday { get; set; }
-            public int? SensorOutTuesday { get; set; }
-            public int? SensorInWednesday { get; set; }
-            public int? SensorOutWednesday { get; set; }
-            public int? SensorInThursday { get; set; }
-            public int? SensorOutThursday { get; set; }
-            public int? SensorInFriday { get; set; }
-            public int? SensorOutFriday { get; set; }
-            public int? SensorInSaturday { get; set; }
-            public int? SensorOutSaturday { get; set; }
-            public int? SensorInSunday { get; set; }
-            public int? SensorOutSunday { get; set; }
+            public int? SensorIDMonday { get; set; }
+            public int? SensorIDTuesday { get; set; }
+            public int? SensorIDWednesday { get; set; }
+            public int? SensorIDThursday { get; set; }
+            public int? SensorIDFriday { get; set; }
+            public int? SensorIDSaturday { get; set; }
+            public int? SensorIDSunday { get; set; }
         }
 
 
@@ -112,7 +105,8 @@ namespace ConsoleApplication1
                     client.Port = int.Parse("587");
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.UseDefaultCredentials = false;
-                 
+
+                    client.Credentials = new NetworkCredential("raul.rivera@laureate.net", "RZJh8n9hVJjboJlsDCJ9HQ");
                     try
                     {
                         Console.WriteLine("SendingEmailis " + dept_name + " for " + name + " ..................................");
@@ -151,7 +145,7 @@ namespace ConsoleApplication1
             string monday = lastmonday.ToString("MM-dd-yyyy");
             string path = "";
             //  monday = ("12-14-2015");
-            Anviz_Data_BaseEntities_test_jose dc = new Anviz_Data_BaseEntities_test_jose();
+            Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2();
  
             var client = new MongoClient();
             var db = client.GetDatabase("admin");
@@ -351,104 +345,53 @@ namespace ConsoleApplication1
             DateTime week4 = Convert.ToDateTime(dates).AddDays(-21);
 
             //  var init = Convert.ToInt32(deptID.ToString());
-            using (Anviz_Data_BaseEntities_test_jose dc = new Anviz_Data_BaseEntities_test_jose())
-            //using (Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2())
+            using (Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2())
             {
                 //   all = (from e in dc).ToList();
+
+          
+ 
                 if (type == true)
                 {
-                    all = (from e in dc.sp_matrix_weekdays(deptID, dates)
-                           select new test
-                           {
-                               Nombre = e.name,
-                               FechaEntradaMonday = e.Hora_de_LLegada_Lunes,
-                               SensorInMonday = e.Lugar_de_Marcaje_Llegada_Lunes,
-                               FechaSalidaMonday = e.Hora_de_salida_Lunes,
-                               SensorOutMonday = e.Lugar_de_Marcaje_Salida_Lunes,
-                               HorasMonday = e.Monday,
-                               FechaEntradaTuesday = e.Hora_de_LLegada_Martes,
-                               SensorInTuesday = e.Lugar_de_Marcaje_Llegada_Martes,
-                               FechaSalidaTuesday = e.Hora_de_salida_Martes,
-                               SensorOutTuesday = e.Lugar_de_Marcaje_Salida_Martes,
-                               HorasTuesday = e.Tuesday,
-                               FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles,
-                               SensorInWednesday = e.Lugar_de_Marcaje_Llegada_Miercoles,
-                               FechaSalidaWendnsday = e.Hora_de_salida_Miercoles,
-                               SensorOutWednesday = e.Lugar_de_Marcaje_Salida_Miercoles,
-                               HorasWendnsday = e.Wednsday,
-                               FechaEntradaThursday = e.Hora_de_LLegada_Jueves,
-                               SensorInThursday = e.Lugar_de_Marcaje_Llegada_Jueves,
-                               FechaSalidaThursday = e.Hora_de_salida_Jueves,
-                               SensorOutThursday = e.Lugar_de_Marcaje_Salida_Jueves,
-                               HorasThursday = e.Thursday,
-                               FechaEntradaFriday = e.Hora_de_LLegada_Viernes,
-                               SensorInFriday = e.Lugar_de_Marcaje_Llegada_Viernes,
-                               FechaSalidaFriday = e.Hora_de_salida_Viernes,
-                               SensorOutFriday = e.Lugar_de_Marcaje_Salida_Viernes,
-                               HorasFriday = e.Friday,
-                               FechaEntradaSaturday = e.Hora_de_LLegada_Sabado,
-                               SensorInSaturday = e.Lugar_de_Marcaje_Llegada_Sabado,
-                               FechaSalidaSaturday = e.Hora_de_salida_Sabado,
-                               SensorOutSaturday = e.Lugar_de_Marcaje_Llegada_Sabado1,
-                               HorasSaturday = e.Saturday,
-                               FechaEntradaSunday = e.Hora_de_LLegada_Domingo,
-                               SensorInSunday = e.Lugar_de_Marcaje_Llegada_Domingo,
-                               FechaSalidaSunday = e.Hora_de_salida_Domingo,
-                               SensorOutSunday = e.Lugar_de_Marcaje_Llegada_Domingo1,
-                               HorasSunday = e.Sunday,
-                           }).ToList();
-
+                    all = (from e in dc.sp_matrix_weekdays(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday, SensorIDMonday = 1, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes,HorasTuesday = e.Tuesday, SensorIDTuesday = 1, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday,SensorIDWednesday = 1, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, SensorIDThursday = 1, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, SensorIDFriday = 1,FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday,SensorIDSaturday = 1, FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday, SensorIDSunday = 1 }).ToList();
+                  
                 }
                 else
                 {
-                    all = (from e in dc.GetEmployes(deptID, dates)
-                           select new test
-                           {
-                               Nombre = e.name,
-                               FechaEntradaMonday = e.Hora_de_LLegada_Lunes,
-                               SensorInMonday = e.Lugar_de_Marcaje_Llegada_Lunes,
-                               FechaSalidaMonday = e.Hora_de_salida_Lunes,
-                               SensorOutMonday = e.Lugar_de_Marcaje_Salida_Lunes,
-                               HorasMonday = e.Monday,
-
-                               FechaEntradaTuesday = e.Hora_de_LLegada_Martes,
-                               SensorInTuesday = e.Lugar_de_Marcaje_Llegada_Martes,
-                               FechaSalidaTuesday = e.Hora_de_salida_Martes,
-                               SensorOutTuesday = e.Lugar_de_Marcaje_Salida_Martes,
-                               HorasTuesday = e.Tuesday,
-
-                               FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles,
-                               SensorInWednesday = e.Lugar_de_Marcaje_Llegada_Miercoles,
-                               FechaSalidaWendnsday = e.Hora_de_salida_Miercoles,
-                               SensorOutWednesday = e.Lugar_de_Marcaje_Salida_Miercoles,
-                               HorasWendnsday = e.Wednsday,
-
-                               FechaEntradaThursday = e.Hora_de_LLegada_Jueves,
-                               SensorInThursday = e.Lugar_de_Marcaje_Llegada_Jueves,
-                               FechaSalidaThursday = e.Hora_de_salida_Jueves,
-                               SensorOutThursday = e.Lugar_de_Marcaje_Salida_Jueves,
-                               HorasThursday = e.Thursday,
-
-                               FechaEntradaFriday = e.Hora_de_LLegada_Viernes,
-                               SensorInFriday = e.Lugar_de_Marcaje_Llegada_Viernes,
-                               FechaSalidaFriday = e.Hora_de_salida_Viernes,
-                               SensorOutFriday = e.Lugar_de_Marcaje_Salida_Viernes,
-                               HorasFriday = e.Friday,
-
-                               FechaEntradaSaturday = e.Hora_de_LLegada_Sabado,
-                               SensorInSaturday = e.Lugar_de_Marcaje_Llegada_Sabado,
-                               FechaSalidaSaturday = e.Hora_de_salida_Sabado,
-                               SensorOutSaturday = e.Lugar_de_Marcaje_Llegada_Sabado1,
-                               HorasSaturday = e.Saturday,
-
-                               FechaEntradaSunday = e.Hora_de_LLegada_Domingo,
-                               SensorInSunday = e.Lugar_de_Marcaje_Llegada_Domingo,
-                               FechaSalidaSunday = e.Hora_de_salida_Domingo,
-                               SensorOutSunday = e.Lugar_de_Marcaje_Llegada_Domingo1,
-                               HorasSunday = e.Sunday,
-                           }).ToList();
+                    all = (from e in dc.GetEmployes(deptID, dates) select new test { Nombre = e.name, FechaEntradaMonday = e.Hora_de_LLegada_Lunes, FechaSalidaMonday = e.Hora_de_salida_Lunes, HorasMonday = e.Monday,SensorIDMonday = 2, FechaEntradaTuesday = e.Hora_de_LLegada_Martes, FechaSalidaTuesday = e.Hora_de_salida_Martes, HorasTuesday = e.Tuesday, SensorIDTuesday = 2, FechaEntradaWendnsday = e.Hora_de_LLegada_Miercoles, FechaSalidaWendnsday = e.Hora_de_salida_Miercoles, HorasWendnsday = e.Wednsday, SensorIDWednesday = 2, FechaEntradaThursday = e.Hora_de_LLegada_Jueves, FechaSalidaThursday = e.Hora_de_salida_Jueves, HorasThursday = e.Thursday, SensorIDThursday = 2, FechaEntradaFriday = e.Hora_de_LLegada_Viernes, FechaSalidaFriday = e.Hora_de_salida_Viernes, HorasFriday = e.Friday, SensorIDFriday = 2, FechaEntradaSaturday = e.Hora_de_LLegada_Sabado, FechaSalidaSaturday = e.Hora_de_salida_Sabado, HorasSaturday = e.Saturday, SensorIDSaturday = 2,FechaEntradaSunday = e.Hora_de_LLegada_Domingo, FechaSalidaSunday = e.Hora_de_salida_Domingo, HorasSunday = e.Sunday, SensorIDSunday = 2 }).ToList();
+                  
                 }
 
+                all.Add(new test {Nombre = "Jose Eduardo Hernandez Alvarado",
+                                  FechaEntradaMonday = new DateTime(2016,4,4,7,0,0),
+                                  FechaSalidaMonday = new DateTime(2016,4,4,5,0,0),
+                                  HorasMonday = 8,
+                                  FechaEntradaTuesday = new DateTime(2016, 4, 5, 7, 0, 0),
+                                  FechaSalidaTuesday = new DateTime(2016, 4, 5, 5, 0, 0),
+                                  HorasTuesday = 8,
+                                  FechaEntradaWendnsday = new DateTime(2016, 4, 6, 7, 0, 0),
+                                  FechaSalidaWendnsday = new DateTime(2016, 4, 6, 5, 0, 0),
+                                  HorasWendnsday = 8,
+                                  FechaEntradaThursday = new DateTime(2016, 4, 7, 7, 0, 0),
+                                  FechaSalidaThursday = new DateTime(2016, 4, 7, 5, 0, 0),
+                                  HorasThursday = 8,
+                                  FechaEntradaFriday = new DateTime(2016, 4, 4, 8, 0, 0),
+                                  FechaSalidaFriday = new DateTime(2016, 4, 8, 5, 0, 0),
+                                  HorasFriday = 8,
+                                  FechaEntradaSaturday = new DateTime(2016, 4, 4, 8, 0, 0),
+                                  FechaSalidaSaturday = new DateTime(2016, 4, 4, 8, 0, 0),
+                                  HorasSaturday = 0,
+                                  FechaEntradaSunday = new DateTime(2016, 4, 4, 8, 0, 0),
+                                  FechaSalidaSunday = new DateTime(2016, 4, 4, 8, 0, 0),
+                                  HorasSunday = 0,
+                                  SensorIDMonday = 99,
+                                  SensorIDTuesday = 1,
+                                  SensorIDWednesday = 1,
+                                  SensorIDThursday = 99,
+                                  SensorIDFriday = 99,
+                                  SensorIDSaturday = 1,
+                                  SensorIDSunday = 1});
+              
             }
 
             DateTime date = Convert.ToDateTime(dates);
@@ -578,55 +521,64 @@ namespace ConsoleApplication1
                 cellName.BorderWidthRight = 1;
                 table.AddCell(cellName);
 
-                //For Monday
-
-                if(item.SensorInMonday == 99)
+                if (item.SensorIDMonday == 99)
                 {
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaMonday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
 
+
+                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaMonday).ToShortTimeString().ToString());
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cell.HorizontalAlignment = 1;
+                    table.AddCell(cell);
+
+                    cellMonday = new PdfPCell(new Phrase((item.HorasMonday).ToString()));
+                    cellMonday.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cellMonday.BorderWidthRight = 1;
+                    cellMonday.HorizontalAlignment = 1;
+                    table.AddCell(cellMonday);
                 }
                 else
                 {
+
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaMonday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
-                }
 
-                if(item.SensorOutMonday == 99)
-                {
 
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaMonday).ToShortTimeString().ToString());
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                }
-                else
-                {
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaMonday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+                    cellMonday = new PdfPCell(new Phrase((item.HorasMonday).ToString()));
+                    cellMonday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
+                    cellMonday.BorderWidthRight = 1;
+                    cellMonday.HorizontalAlignment = 1;
+                    table.AddCell(cellMonday);
                 }
 
-                cellMonday = new PdfPCell(new Phrase((item.HorasMonday).ToString()));
-                cellMonday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-                cellMonday.BorderWidthRight = 1;
-                cellMonday.HorizontalAlignment = 1;
-                table.AddCell(cellMonday);
-
-                //For Tuesday
-
-                if(item.SensorInTuesday == 99)
+                if (item.SensorIDTuesday == 99)
                 {
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaTuesday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
 
+
+                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaTuesday).ToShortTimeString().ToString());
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cell.HorizontalAlignment = 1;
+                    table.AddCell(cell);
+
+                    cellTuesday = new PdfPCell(new Phrase((item.HorasTuesday).ToString()));
+                    cellTuesday.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cellTuesday.BorderWidthRight = 1;
+                    cellTuesday.HorizontalAlignment = 1;
+                    table.AddCell(cellTuesday);
                 }
                 else
                 {
@@ -634,37 +586,38 @@ namespace ConsoleApplication1
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
-                }
 
-                if(item.SensorOutTuesday == 99)
-                {
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaTuesday).ToShortTimeString().ToString());
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                }
-                else
-                {
+
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaTuesday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+                    cellTuesday = new PdfPCell(new Phrase((item.HorasTuesday).ToString()));
+                    cellTuesday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
+                    cellTuesday.BorderWidthRight = 1;
+                    cellTuesday.HorizontalAlignment = 1;
+                    table.AddCell(cellTuesday);
                 }
 
-                cellTuesday = new PdfPCell(new Phrase((item.HorasTuesday).ToString()));
-                cellTuesday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-                cellTuesday.BorderWidthRight = 1;
-                cellTuesday.HorizontalAlignment = 1;
-                table.AddCell(cellTuesday);
-
-                //For Wednesday
-
-                if (item.SensorInWednesday == 99)
+                if (item.SensorIDWednesday == 99)
                 {
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaWendnsday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+
+                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaWendnsday).ToShortTimeString().ToString());
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cell.HorizontalAlignment = 1;
+                    table.AddCell(cell);
+
+                    cellWednesday = new PdfPCell(new Phrase((item.HorasWendnsday).ToString()));
+                    cellWednesday.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cellWednesday.BorderWidthRight = 1;
+                    cellWednesday.HorizontalAlignment = 1;
+                    table.AddCell(cellWednesday);
                 }
                 else
                 {
@@ -672,36 +625,39 @@ namespace ConsoleApplication1
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
-                }
 
-                if(item.SensorOutWednesday == 99)
-                {
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaWendnsday).ToShortTimeString().ToString());
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                }
-                else
-                {
+
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaWendnsday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+                    cellWednesday = new PdfPCell(new Phrase((item.HorasWendnsday).ToString()));
+                    cellWednesday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
+                    cellWednesday.BorderWidthRight = 1;
+                    cellWednesday.HorizontalAlignment = 1;
+                    table.AddCell(cellWednesday);
                 }
 
-                cellWednesday = new PdfPCell(new Phrase((item.HorasWendnsday).ToString()));
-                cellWednesday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-                cellWednesday.BorderWidthRight = 1;
-                cellWednesday.HorizontalAlignment = 1;
-                table.AddCell(cellWednesday);
-
-                //For Thursday
-                if(item.SensorInThursday == 99)
+                if (item.SensorIDThursday == 99)
                 {
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaThursday).ToShortTimeString().ToString());
+                    cell.Phrase =
+                        new Phrase(Convert.ToDateTime(item.FechaEntradaThursday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+
+                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaThursday).ToShortTimeString().ToString());
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cell.HorizontalAlignment = 1;
+                    table.AddCell(cell);
+
+                    cellThursday = new PdfPCell(new Phrase((item.HorasThursday).ToString()));
+                    cellThursday.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cellThursday.BorderWidthRight = 1;
+                    cellThursday.HorizontalAlignment = 1;
+                    table.AddCell(cellThursday);
                 }
                 else
                 {
@@ -709,37 +665,38 @@ namespace ConsoleApplication1
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
-                }
 
-                if(item.SensorOutThursday == 99)
-                {
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaThursday).ToShortTimeString().ToString());
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                }
-                else
-                {
+
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaThursday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+                    cellThursday = new PdfPCell(new Phrase((item.HorasThursday).ToString()));
+                    cellThursday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
+                    cellThursday.BorderWidthRight = 1;
+                    cellThursday.HorizontalAlignment = 1;
+                    table.AddCell(cellThursday);
                 }
 
-                cellThursday = new PdfPCell(new Phrase((item.HorasThursday).ToString()));
-                cellThursday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-                cellThursday.BorderWidthRight = 1;
-                cellThursday.HorizontalAlignment = 1;
-                table.AddCell(cellThursday);
-
-                //For Friday
-
-                if(item.SensorInFriday == 99)
+                if (item.SensorIDFriday == 99)
                 {
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaFriday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+
+                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaFriday).ToShortTimeString().ToString());
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cell.HorizontalAlignment = 1;
+                    table.AddCell(cell);
+
+                    cellfriday = new PdfPCell(new Phrase((item.HorasFriday).ToString()));
+                    cellfriday.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cellfriday.BorderWidthRight = 1;
+                    cellfriday.HorizontalAlignment = 1;
+                    table.AddCell(cellfriday);
                 }
                 else
                 {
@@ -747,37 +704,39 @@ namespace ConsoleApplication1
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
-                }
 
-                if(item.SensorOutFriday == 99)
-                {
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaFriday).ToShortTimeString().ToString());
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                }
-                else
-                {
+
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaFriday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+                    cellfriday = new PdfPCell(new Phrase((item.HorasFriday).ToString()));
+                    cellfriday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
+                    cellfriday.BorderWidthRight = 1;
+                    cellfriday.HorizontalAlignment = 1;
+                    table.AddCell(cellfriday);
                 }
 
-                cellfriday = new PdfPCell(new Phrase((item.HorasFriday).ToString()));
-                cellfriday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-                cellfriday.BorderWidthRight = 1;
-                cellfriday.HorizontalAlignment = 1;
-                table.AddCell(cellfriday);
-
-                //For Saturday
-
-                if(item.SensorInSaturday == 99)
+                if (item.SensorIDSaturday == 99)
                 {
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaSaturday).ToShortTimeString().ToString());
+                    cell.Phrase =
+                        new Phrase(Convert.ToDateTime(item.FechaEntradaSaturday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+
+                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaSaturday).ToShortTimeString().ToString());
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cell.HorizontalAlignment = 1;
+                    table.AddCell(cell);
+
+                    cellsaturday = new PdfPCell(new Phrase((item.HorasSaturday).ToString()));
+                    cellsaturday.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cellsaturday.BorderWidthRight = 1;
+                    cellsaturday.HorizontalAlignment = 1;
+                    table.AddCell(cellsaturday);
                 }
                 else
                 {
@@ -785,38 +744,39 @@ namespace ConsoleApplication1
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
-                }
 
-                if(item.SensorOutSaturday == 99)
-                {
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaSaturday).ToShortTimeString().ToString());
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                }
-                else
-                {
+
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaSaturday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+                    cellsaturday = new PdfPCell(new Phrase((item.HorasSaturday).ToString()));
+                    cellsaturday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
+                    cellsaturday.BorderWidthRight = 1;
+                    cellsaturday.HorizontalAlignment = 1;
+                    table.AddCell(cellsaturday);
                 }
 
-                cellsaturday = new PdfPCell(new Phrase((item.HorasSaturday).ToString()));
-                cellsaturday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-                cellsaturday.BorderWidthRight = 1;
-                cellsaturday.HorizontalAlignment = 1;
-                table.AddCell(cellsaturday);
-
-                //For Sunday
-
-                if (item.SensorInSunday == 99)
+                if (item.SensorIDSunday == 99)
                 {
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaEntradaSunday).ToShortTimeString().ToString());
 
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+
+                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaSunday).ToShortTimeString().ToString());
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cell.HorizontalAlignment = 1;
+                    table.AddCell(cell);
+
+                    cellsunday = new PdfPCell(new Phrase((item.HorasSunday).ToString()));
+                    cellsunday.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+                    cellsunday.BorderWidthRight = 1;
+                    cellsunday.HorizontalAlignment = 1;
+                    table.AddCell(cellsunday);
                 }
                 else
                 {
@@ -825,87 +785,34 @@ namespace ConsoleApplication1
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
 
-                }
 
-                if (item.SensorOutSunday == 99)
-                {
-                    cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaSunday).ToShortTimeString().ToString());
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                }
-                else
-                {
                     cell.Phrase = new Phrase(Convert.ToDateTime(item.FechaSalidaSunday).ToShortTimeString().ToString());
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
                     cell.HorizontalAlignment = 1;
                     table.AddCell(cell);
+
+                    cellsunday = new PdfPCell(new Phrase((item.HorasSunday).ToString()));
+                    cellsunday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
+                    cellsunday.BorderWidthRight = 1;
+                    cellsunday.HorizontalAlignment = 1;
+                    table.AddCell(cellsunday);
                 }
-
-
-                cellsunday = new PdfPCell(new Phrase((item.HorasSunday).ToString()));
-                cellsunday.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-                cellsunday.BorderWidthRight = 1;
-                cellsunday.HorizontalAlignment = 1;
-                table.AddCell(cellsunday);
-
                 cell.Phrase = new Phrase(Convert.ToString(Convert.ToDecimal(item.HorasMonday) + Convert.ToDecimal(item.HorasTuesday) + Convert.ToDecimal(item.HorasWendnsday) + Convert.ToDecimal(item.HorasThursday) + Convert.ToDecimal(item.HorasFriday) + Convert.ToDecimal(item.HorasSaturday) + Convert.ToDecimal(item.HorasSunday)));
                 cell.HorizontalAlignment = 1;
                 table.AddCell(cell);
-                
+
                 //table.Rows.Add(cell);
                 //     
             }
             /*Add legend to Table */
-
-            cell2 = new PdfPCell(new Phrase(""));
-            cell2.HorizontalAlignment = Element.ALIGN_CENTER;
-            cell2.BackgroundColor = new iTextSharp.text.BaseColor(255, 255, 255);
-            cell2.BorderColor = new iTextSharp.text.BaseColor(255, 255, 255);
-            cell2.Colspan = 24;
-            table.AddCell(cell2);
-
-            cell2 = new PdfPCell(new Phrase(""));
-            cell2.HorizontalAlignment = Element.ALIGN_CENTER;
-            cell2.BackgroundColor = new iTextSharp.text.BaseColor(255, 255, 255);
-            cell2.BorderColor = new iTextSharp.text.BaseColor(255, 255, 255);
-            cell2.Colspan = 24;
-            table.AddCell(cell2);
-
-            cell2 = new PdfPCell(new Phrase("Color Key"));
-            cell2.HorizontalAlignment = Element.ALIGN_CENTER;
-            cell2.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-            cell2.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-            cell2.Colspan = 24;
-            table.AddCell(cell2);
-
-            cell2 = new PdfPCell(new Phrase("Remote Authentication"));
-            cell2.HorizontalAlignment = Element.ALIGN_CENTER;
-            cell2.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-            cell2.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-            cell2.Colspan = 12;
-            table.AddCell(cell2);
-
-            cell2 = new PdfPCell(new Phrase(""));
-            cell2.HorizontalAlignment = Element.ALIGN_CENTER;
-            cell2.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
-            cell2.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-            cell2.Colspan = 12;
-            table.AddCell(cell2);
-
-            cell2 = new PdfPCell(new Phrase("OnSite Authentication"));
-            cell2.HorizontalAlignment = Element.ALIGN_CENTER;
-            cell2.BackgroundColor = new iTextSharp.text.BaseColor(242, 242, 242);
-            cell2.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-            cell2.Colspan = 12;
-            table.AddCell(cell2);
-
-            cell2 = new PdfPCell(new Phrase(""));
-            cell2.HorizontalAlignment = Element.ALIGN_CENTER;
-            cell2.BackgroundColor = new iTextSharp.text.BaseColor(242,242,242);
-            cell2.BorderColor = new iTextSharp.text.BaseColor(0, 0, 0);
-            cell2.Colspan = 12;
-            table.AddCell(cell2);
+            PdfPCell keyCell = new PdfPCell(new Phrase("Color Key"));
+            keyCell.Colspan = 2;
+            keyCell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            table.AddCell(keyCell);
+            PdfPCell keyCell2 = new PdfPCell();
+            keyCell2.BackgroundColor = new iTextSharp.text.BaseColor(0, 247, 255);
+            table.AddCell(keyCell2);
+            table.AddCell("Web Authentication");
 
             return table;
         }
@@ -1168,7 +1075,7 @@ namespace ConsoleApplication1
             for (int i = 0; i < 3; i++)
             {
 
-                using (Anviz_Data_BaseEntities_test_jose dc = new Anviz_Data_BaseEntities_test_jose())
+                using (Anviz_Data_BaseEntities2 dc = new Anviz_Data_BaseEntities2())
                 {
                     //   all = (from e in dc).ToList();
                     if (type == true)

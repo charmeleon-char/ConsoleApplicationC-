@@ -16,25 +16,39 @@ namespace ConsoleApplication2._0
         public string userid { get; set; }
         public string name { get; set; }
         public Nullable<System.DateTime> Hora_de_LLegada_Lunes { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Lunes { get; set; }
         public Nullable<System.DateTime> Hora_de_salida_Lunes { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Salida_Lunes { get; set; }
         public Nullable<decimal> Monday { get; set; }
         public Nullable<System.DateTime> Hora_de_LLegada_Martes { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Martes { get; set; }
         public Nullable<System.DateTime> Hora_de_salida_Martes { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Salida_Martes { get; set; }
         public Nullable<decimal> Tuesday { get; set; }
         public Nullable<System.DateTime> Hora_de_LLegada_Miercoles { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Miercoles { get; set; }
         public Nullable<System.DateTime> Hora_de_salida_Miercoles { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Salida_Miercoles { get; set; }
         public Nullable<decimal> Wednsday { get; set; }
         public Nullable<System.DateTime> Hora_de_LLegada_Jueves { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Jueves { get; set; }
         public Nullable<System.DateTime> Hora_de_salida_Jueves { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Salida_Jueves { get; set; }
         public Nullable<decimal> Thursday { get; set; }
         public Nullable<System.DateTime> Hora_de_LLegada_Viernes { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Viernes { get; set; }
         public Nullable<System.DateTime> Hora_de_salida_Viernes { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Salida_Viernes { get; set; }
         public Nullable<decimal> Friday { get; set; }
         public Nullable<System.DateTime> Hora_de_LLegada_Sabado { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Sabado { get; set; }
         public Nullable<System.DateTime> Hora_de_salida_Sabado { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Sabado1 { get; set; }
         public Nullable<decimal> Saturday { get; set; }
         public Nullable<System.DateTime> Hora_de_LLegada_Domingo { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Domingo { get; set; }
         public Nullable<System.DateTime> Hora_de_salida_Domingo { get; set; }
+        public Nullable<int> Lugar_de_Marcaje_Llegada_Domingo1 { get; set; }
         public Nullable<decimal> Sunday { get; set; }
     }
 }

@@ -40,3 +40,49 @@ C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\b
 C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.application
 C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.exe.manifest
 C:\Users\rcalix\Dropbox (laureate)\ConsoleApplication2.0\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.application
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.exe.config
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.exe
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.pdb
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.exe.manifest
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.application
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.exe
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.pdb
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\EntityFramework.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\itextsharp.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\Mandrill.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Bson.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Driver.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\EntityFramework.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\itextsharp.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\Mandrill.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Bson.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Driver.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.csprojResolveAssemblyReference.cache
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.exe.manifest
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.application
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.exe.config
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.exe
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.pdb
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.exe.manifest
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.application
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.exe
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\ConsoleApplication2.0.pdb
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\EntityFramework.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\itextsharp.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\Mandrill.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Bson.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Driver.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\EntityFramework.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\itextsharp.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\Mandrill.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Bson.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\MongoDB.Driver.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.csprojResolveAssemblyReference.cache
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.exe.manifest
+C:\Users\jhernandez\Desktop\OneDrive - Laureate Education\Assistance Report\ConsoleApplicationC-\ConsoleApplication2.0\obj\Debug\ConsoleApplication2.0.application
